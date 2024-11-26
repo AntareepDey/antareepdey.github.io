@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Twitter, Linkedin, Search } from 'lucide-react';
+import { siLinkedin, siGithub, siTwitter, siGoogle } from 'simple-icons';
 import { Publication } from './Publication';
 import { Project } from './Project';
 import { SectionHeading } from './SectionHeading';
@@ -21,6 +21,26 @@ const staggerContainer = {
     }
   }
 };
+
+const SocialIcon = ({ path, href }: { path: string; href: string }) => (
+  <motion.a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    whileHover={{ scale: 1.1, y: -2 }}
+    className="text-gray-400 hover:text-white transition-colors"
+  >
+    <svg
+      role="img"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-6 h-6"
+      fill="currentColor"
+    >
+      <path d={path} />
+    </svg>
+  </motion.a>
+);
 
 const Portfolio = () => {
   const publications = [
@@ -46,32 +66,40 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: "HUDN",
+      title: "Resnet20",
       year: "2023",
-      description: "A platform to showcase your side projects",
-      gradient: "bg-gradient-to-br from-purple-400/20 to-purple-600/20"
+      description: "Deep Convolutional Neural network for object recognition",
+      gradient: "bg-gradient-to-br from-purple-400/20 to-purple-600/20",
+      githubUrl: "#href"
     },
     {
       title: "AntiGPT",
       year: "2023",
       description: "A tool to detect AI generated text",
-      gradient: "bg-gradient-to-br from-orange-400/20 to-pink-600/20"
+      gradient: "bg-gradient-to-br from-orange-400/20 to-pink-600/20",
+      githubUrl: "#href"
     },
     {
-      title: "TourX",
+      title: "DanceGPT",
       year: "2023",
-      description: "TourX is your AI-based personal Guide",
-      gradient: "bg-gradient-to-br from-cyan-400/20 to-blue-600/20"
+      description: "DanceGPT is your AI-based personal dance guide",
+      gradient: "bg-gradient-to-br from-cyan-400/20 to-blue-600/20",
+      githubUrl: "#href"
     }
+  ];
+
+  const socialIcons = [
+    { icon: siLinkedin, href: "#linkedin" },
+    { icon: siGithub, href: "#github" },
+    { icon: siTwitter, href: "#twitter" },
+    { icon: siGoogle, href: "#google" }
   ];
 
   return (
     <div className="min-h-screen relative overflow-hidden font-sans">
       <Navbar />
 
-      {/* Main Content */}
       <main className="relative px-6 pt-24">
-        {/* Profile Section */}
         <motion.div {...fadeIn} className="pt-24 mb-20">
           <div className="flex flex-col md:flex-row md:items-center space-y-6 md:space-y-0 md:space-x-6 mb-12">
             <motion.div 
@@ -98,24 +126,13 @@ const Portfolio = () => {
             or snapping photos of the world around me.
           </motion.p>
 
-          <motion.div 
-            {...fadeIn}
-            className="flex space-x-4 mb-16"
-          >
-            {[Linkedin, Github, Twitter, Search].map((Icon, index) => (
-              <motion.a
-                key={index}
-                href="#"
-                whileHover={{ scale: 1.1, y: -2 }}
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <Icon className="w-6 h-6" />
-              </motion.a>
+          <motion.div className="flex space-x-4 mb-16">
+            {socialIcons.map((social, index) => (
+              <SocialIcon key={index} path={social.icon.path} href={social.href} />
             ))}
           </motion.div>
         </motion.div>
 
-        {/* Publications Section */}
         <motion.section 
           variants={staggerContainer}
           initial="initial"
@@ -136,7 +153,6 @@ const Portfolio = () => {
           </div>
         </motion.section>
 
-        {/* Projects Section */}
         <motion.section 
           variants={staggerContainer}
           initial="initial"
@@ -157,7 +173,6 @@ const Portfolio = () => {
           </div>
         </motion.section>
 
-        {/* Footer */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -173,7 +188,7 @@ const Portfolio = () => {
                 </h2>
                 <motion.a
                   whileHover={{ scale: 1.05 }}
-                  href="mailto:hello@raihankhan.dev"
+                  href="mailto:antareep2018@gmail.com"
                   className="animated-gradient block"
                 >
                   antareep2018@gmail.com

@@ -1,11 +1,34 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
 
 interface SectionHeadingProps {
   title: string;
   href?: string;
 }
+
+const ArrowIcon = () => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    className="ml-2 transform group-hover:translate-x-1 transition-transform"
+  >
+    <defs>
+      <linearGradient id="arrow-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="#60a5fa" />
+        <stop offset="50%" stopColor="#e879f9" />
+        <stop offset="100%" stopColor="#60a5fa" />
+      </linearGradient>
+    </defs>
+    <path
+      d="M9 6l6 6-6 6"
+      fill="url(#arrow-gradient)"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
 
 export const SectionHeading: React.FC<SectionHeadingProps> = ({ title, href }) => (
   <div className="flex justify-between items-center mb-8">
@@ -26,10 +49,10 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({ title, href }) =
         href={href}
         className="flex items-center group"
       >
-        <span className="bg-gradient-to-r from-orange-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-blue-400 via-pink-500 to-blue-400 bg-clip-text text-transparent">
           See all
         </span>
-        <ArrowRight className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform text-blue-400" />
+        <ArrowIcon />
       </motion.a>
     )}
   </div>
