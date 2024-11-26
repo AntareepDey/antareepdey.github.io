@@ -28,19 +28,19 @@ const Portfolio = () => {
       title: "Attention is all you need: An introduction to transformers",
       date: "Oct 2024",
       description: "We propose a new simple network architecture, the Transformer, based solely on attention mechanisms...",
-      image: "/api/placeholder/400/200"
+      image: "/src/p1.png"
     },
     {
       title: "Understanding Neural Networks: A Comprehensive Guide",
       date: "Oct 2024",
       description: "An in-depth exploration of neural network architectures and their applications...",
-      image: "/api/placeholder/400/200"
+      image: "/src/p2.png"
     },
     {
       title: "The Future of Computer Vision",
       date: "Oct 2024",
       description: "Exploring the latest advancements in computer vision and their real-world applications...",
-      image: "/api/placeholder/400/200"
+      image: "/src/p3.png"
     }
   ];
 
@@ -78,7 +78,7 @@ const Portfolio = () => {
               whileHover={{ scale: 1.05 }}
               className="w-24 h-24 rounded-[20px] overflow-hidden ring-2 ring-purple-500/20"
             >
-              <img src="/api/placeholder/96/96" alt="Profile" className="w-full h-full object-cover" />
+              <img src="/src/Antareep.png" alt="Profile" className="w-full h-full object-cover" />
             </motion.div>
             <div>
               <h1 className="text-4xl font-bold animated-gradient mb-2">
@@ -176,7 +176,7 @@ const Portfolio = () => {
                   href="mailto:hello@raihankhan.dev"
                   className="animated-gradient block"
                 >
-                  hello@raihankhan.dev
+                  antareep2018@gmail.com
                 </motion.a>
               </div>
               <div className="text-center md:text-right">
