@@ -34,7 +34,10 @@ export const Navbar = () => {
     </svg>
   );
 
-  const navItems = ['Photography', 'Blog', 'About'];
+  const navItems = [
+    { name: 'Photography', href: '/photography' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'About', href: '/about' }]
 
   if (isMobile) {
     return (
@@ -73,12 +76,12 @@ export const Navbar = () => {
                 <div className="flex flex-col items-end space-y-4">
                   {navItems.map((item) => (
                     <motion.a
-                      key={item}
+                      key={item.name}
                       whileHover={{ x: -5 }}
-                      href="#"
+                      href={item.href}
                       className="text-white/80 hover:text-white transition-colors font-semibold whitespace-nowrap"
                     >
-                      {item}
+                      {item.name}
                     </motion.a>
                   ))}
                 </div>
@@ -112,12 +115,12 @@ export const Navbar = () => {
           <div className="space-x-12">
             {navItems.map((item) => (
               <motion.a
-                key={item}
+                key={item.name}
                 whileHover={{ scale: 1.05 }}
-                href="#"
+                href={item.href}
                 className="text-white/80 hover:text-white transition-colors font-semibold"
               >
-                {item}
+                {item.name}
               </motion.a>
             ))}
           </div>

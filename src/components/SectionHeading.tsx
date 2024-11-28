@@ -23,7 +23,9 @@ const ArrowIcon = () => (
     </defs>
     <path
       d="M9 6l6 6-6 6"
-      fill="url(#arrow-gradient)"
+      stroke="url(#arrow-gradient)"
+      fill="1"
+      strokeWidth="3"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
@@ -35,7 +37,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({ title, href }) =
     <motion.h2
       initial={{ opacity: 0, x: -20 }}
       whileInView={{ opacity: 1, x: 0 }}
-      whileHover={{ y: -2 }}
+      whileHover={{ scale: 1.05, y: -2 }}
       viewport={{ once: true }}
       className="text-3xl font-bold gradient-heading"
     >

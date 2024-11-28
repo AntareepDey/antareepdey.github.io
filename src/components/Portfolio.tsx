@@ -109,7 +109,7 @@ const Portfolio = () => {
               <img src="/src/Antareep.png" alt="Profile" className="w-full h-full object-cover" />
             </motion.div>
             <div>
-              <h1 className="text-4xl font-bold animated-gradient mb-2">
+              <h1 className="text-4xl font-bold gradient-heading mb-2">
                 Antareep Dey
               </h1>
               <p className="text-gray-400 font-display">Machine Learning Engineer</p>
@@ -183,8 +183,8 @@ const Portfolio = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-4 text-center md:text-left">
                 <h2 className="text-4xl md:text-6xl font-bold">
-                  <span className="animated-gradient">Say</span>
-                  <span className="animated-gradient ml-4">hi!</span>
+                  <span className="gradient-heading">Say</span>
+                  <span className="gradient-heading ml-4">hi!</span>
                 </h2>
                 <motion.a
                   whileHover={{ scale: 1.05 }}

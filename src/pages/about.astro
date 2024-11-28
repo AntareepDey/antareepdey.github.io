@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Navbar } from '../components/Navbar';
+import AboutContent from '../components/AboutContent';
+---
+
+<Layout title="About Me">
+  <div data-scroll>
+    <Navbar client:load/>
+    <AboutContent client:load />
+  </div>
+</Layout>
