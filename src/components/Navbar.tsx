@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { siGithub } from 'simple-icons';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,26 +34,28 @@ export const Navbar = () => {
   );
 
   const navItems = [
-    { name: 'Photography', href: '/photography' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'About', href: '/about' }]
+    { name: 'Photography', href: '#' },
+    { name: 'Blog', href: '#' },
+    { name: 'About', href: '/about' }
+  ];
 
   if (isMobile) {
     return (
       <motion.nav
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3, type: "spring", stiffness: 260, damping: 20 }}
+        // transition={{ duration: 0.3, type: "spring", stiffness: 260, damping: 20 }}
         className="fixed top-0 left-0 right-0 p-4 z-50"
       >
         <div className="max-w-3xl mx-auto px-4">
           <motion.div className="flex items-center justify-between">
-            <motion.div
+            <motion.a
+              href="/"
               whileHover={{ scale: 1.05 }}
               className="text-2xl font-bold gradient-heading bg-black/20 backdrop-blur-sm border border-white/10 shadow-lg rounded-full px-4 py-2"
             >
               AD.
-            </motion.div>
+            </motion.a>
             <motion.button
               whileHover={{ scale: 1.05 }}
               onClick={() => setIsOpen(!isOpen)}
@@ -66,38 +67,38 @@ export const Navbar = () => {
 
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3, type: "spring", stiffness: 260, damping: 20 }}
-              className="absolute right-4 mt-4"
-            >
-              <div className="bg-black/20 backdrop-blur-sm border border-white/10 shadow-lg rounded-[20px] py-4 px-8">
-                <div className="flex flex-col items-end space-y-4">
-                  {navItems.map((item) => (
-                    <motion.a
-                      key={item.name}
-                      whileHover={{ x: -5 }}
-                      href={item.href}
-                      className="text-white/80 hover:text-white transition-colors font-semibold whitespace-nowrap"
-                    >
-                      {item.name}
-                    </motion.a>
-                  ))}
-                </div>
+            initial={{ opacity: 1, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, type: "spring", stiffness: 260, damping: 20 }}
+            className="absolute right-4 mt-4"
+          >
+            <div className="bg-black/20 backdrop-blur-sm border border-white/10 shadow-lg rounded-[20px] py-4 px-8">
+              <div className="flex flex-col items-end space-y-4">
+                {navItems.map((item) => (
+                  <motion.a
+                    key={item.name}
+                    whileHover={{ x: -5 }}
+                    href={item.href}
+                    className="text-white/80 hover:text-white transition-colors font-semibold whitespace-nowrap"
+                  >
+                    {item.name}
+                  </motion.a>
+                ))}
               </div>
-            </motion.div>
-          )}
-        </div>
-      </motion.nav>
+            </div>
+          </motion.div>
+        )}
+      </div>
+    </motion.nav>
     );
   }
 
   return (
     <motion.nav
+      whileHover={{ scale: 1.02, y: -5 }}
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, type: "spring", stiffness: 260, damping: 20 }}
       className="fixed top-0 left-0 right-0 p-4 z-50"
     >
       <div className="max-w-3xl mx-auto px-4">
@@ -105,13 +106,15 @@ export const Navbar = () => {
           className="flex items-center justify-between p-4 rounded-[20px] bg-black/20 backdrop-blur-sm border border-white/10 shadow-lg"
           whileHover={{ y: -2 }}
           transition={{ duration: 0.2 }}
-        >
-          <motion.div
+        >          
+          <motion.a
+            href="/"
             whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             className="text-2xl font-bold gradient-heading"
           >
             AD.
-          </motion.div>
+          </motion.a>
           <div className="space-x-12">
             {navItems.map((item) => (
               <motion.a

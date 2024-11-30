@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { SectionHeading } from './SectionHeading';
 
 export const AboutSection = () => {
   const GradientLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
@@ -50,8 +51,8 @@ export const AboutSection = () => {
 
         {/* Right Column - Text Content */}
         <div className="space-y-6 relative z-30">
-          <h1 className="text-3xl font-bold gradient-heading mb-4">About Me:</h1>
-          <p className="text-white text-xl mb-8">Thanks for stopping by! Here's a bit about me.</p>
+          <SectionHeading title="About Me"/>
+          <p className="text-white text-xm mb-8">Thanks for stopping by! Here's a bit about me.</p>
           
           <p className="text-white leading-relaxed">
             Hello <span className="text-yellow-400">👋</span>, I'm{' '}
@@ -69,8 +70,7 @@ export const AboutSection = () => {
           </p>
 
           <p className="text-white leading-relaxed">
-            When I'm free you might find me cheering on my favorite F1 team (
-            <GradientLink href="#">team Mercedes till death do us part</GradientLink>), appreciating
+            When I'm free you might find me cheering on my favorite F1 team , appreciating
             stunning architecture, or capturing the world through my lens. (Oh, and fueling my curiosity
             with a constant stream of caffeine... because, student life!)
           </p>
@@ -85,9 +85,9 @@ export const AboutSection = () => {
           <motion.a
             href="/resume.pdf"
             whileHover={{ scale: 1.05 }}
-            className="inline-block text-xl font-semibold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+            className="inline-block text-xm font-semibold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
           >
-            Resume
+            My Resume
           </motion.a>
         </div>
       </div>

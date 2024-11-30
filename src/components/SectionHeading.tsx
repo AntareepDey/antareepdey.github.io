@@ -35,8 +35,8 @@ const ArrowIcon = () => (
 export const SectionHeading: React.FC<SectionHeadingProps> = ({ title, href }) => (
   <div className="flex justify-between items-center mb-8">
     <motion.h2
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ y: -20 }}
+      whileInView={{ y: 0 }}
       whileHover={{ scale: 1.05, y: -2 }}
       viewport={{ once: true }}
       className="text-3xl font-bold gradient-heading"
@@ -45,8 +45,8 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({ title, href }) =
     </motion.h2>
     {href && (
       <motion.a
-        initial={{ opacity: 0, x: 20 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ x: 20 }}
+        whileInView={{ x: 0 }}
         viewport={{ once: true }}
         href={href}
         className="flex items-center group"

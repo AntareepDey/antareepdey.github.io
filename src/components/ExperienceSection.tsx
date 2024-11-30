@@ -110,7 +110,7 @@ export const ExperienceSection = () => {
       viewport={{ once: true }}
       className="mb-20"
     >
-      <h2 className="text-3xl font-bold gradient-heading mb-8">Experience</h2>
+      <SectionHeading title="Experience"/>
       <div className="space-y-6">
         {experiences.map((experience, index) => (
           <ExperienceCard key={index} {...experience} />

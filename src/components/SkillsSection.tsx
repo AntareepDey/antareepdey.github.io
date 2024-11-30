@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Card } from './Card';
+import { SectionHeading } from './SectionHeading';
 import { 
   siReact, siNodedotjs, siMysql, siGit,
   siHtml5, siCss3, siJavascript, siTailwindcss,
@@ -46,7 +47,7 @@ export const SkillsSection = () => {
       viewport={{ once: true }}
       className="mb-20"
     >
-      <h2 className="text-3xl font-bold gradient-heading mb-8">Skills</h2>
+      <SectionHeading title="Skills"/>
       <div className="flex flex-wrap gap-4">
         {skills.map((skill, index) => (
           <SkillIcon key={index} icon={skill.icon} />
