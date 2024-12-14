@@ -1,12 +1,157 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { siLinkedin, siGithub, siTwitter, siGoogle } from 'simple-icons';
-import { Publication } from './Publication';
-import { Project } from './Project';
-import { SectionHeading } from './SectionHeading';
 import { Card } from './Card';
-import { Navbar } from './Navbar';
 import { Footer } from './Footer';
+
+// Integrated SectionHeading Component
+const ArrowIcon = () => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    className="ml-2 transform group-hover:translate-x-1 transition-transform"
+  >
+    <defs>
+      <linearGradient id="arrow-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="#60a5fa" />
+        <stop offset="50%" stopColor="#e879f9" />
+        <stop offset="100%" stopColor="#60a5fa" />
+      </linearGradient>
+    </defs>
+    <path
+      d="M9 6l6 6-6 6"
+      stroke="url(#arrow-gradient)"
+      fill="none"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+interface SectionHeadingProps {
+  title: string;
+  href?: string;
+}
+
+const SectionHeading: React.FC<SectionHeadingProps> = ({ title, href }) => (
+  <div className="flex justify-between items-center mb-8">
+    <motion.h2
+      initial={{ y: -20 }}
+      whileInView={{ y: 0 }}
+      whileHover={{ scale: 1.05, y: -2 }}
+      viewport={{ once: true }}
+      className="text-3xl font-bold gradient-heading"
+    >
+      {title}
+    </motion.h2>
+    {href && (
+      <motion.a
+        initial={{ x: 20 }}
+        whileInView={{ x: 0 }}
+        viewport={{ once: true }}
+        href={href}
+        className="flex items-center group"
+      >
+        <span className="bg-gradient-to-r from-blue-400 via-pink-500 to-blue-400 bg-clip-text text-transparent">
+          See all
+        </span>
+        <ArrowIcon />
+      </motion.a>
+    )}
+  </div>
+);
+
+// Integrated Publication Component
+interface PublicationProps {
+  title: string;
+  date: string;
+  description: string;
+  image: string;
+}
+
+const Publication: React.FC<PublicationProps> = ({
+  title,
+  date,
+  description,
+  image
+}) => (
+  <Card>
+    <img src={image} alt={title} className="w-full rounded-[20px] mb-4 hover:opacity-90 transition-opacity" />
+    <h3 className="text-white font-semibold mb-2">{title}</h3>
+    <p className="text-gray-400 text-sm mb-4">{date}</p>
+    <p className="text-gray-500 text-sm mb-4">{description}</p>
+    <div className="flex items-center space-x-4">
+      <a 
+        href="#github" 
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-gray-400 hover:text-white transition-colors"
+      >
+        <svg
+          role="img"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-4 h-4"
+          fill="currentColor"
+        >
+          <path d={siGithub.path} />
+        </svg>
+      </a>
+      <a 
+        href="#read" 
+        className="text-gray-400 hover:text-white transition-colors text-sm"
+      >
+        Read
+      </a>
+    </div>
+  </Card>
+);
+
+// Integrated Project Component
+interface ProjectProps {
+  title: string;
+  year: string;
+  description: string;
+  gradient: string;
+  githubUrl?: string;
+}
+
+const Project: React.FC<ProjectProps> = ({
+  title,
+  year,
+  description,
+  gradient,
+  githubUrl
+}) => (
+  <Card>
+    <div className={`${gradient} rounded-lg p-8 mb-4`}>
+      <h3 className="text-2xl font-bold text-white">{title}</h3>
+    </div>
+    <p className="text-sm text-gray-400 mb-2">{year}</p>
+    <p className="text-gray-300 mb-4">{description}</p>
+    {githubUrl && (
+      <a 
+        href={githubUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block text-gray-400 hover:text-white transition-colors"
+      >
+        <svg
+          role="img"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-5 h-5"
+          fill="currentColor"
+        >
+          <path d={siGithub.path} />
+        </svg>
+      </a>
+    )}
+  </Card>
+);
 
 const fadeIn = {
   initial: { y: 20 },
@@ -98,8 +243,6 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen relative overflow-hidden font-sans">
-      <Navbar />
-
       <main className="relative px-6 pt-24">
         <motion.div {...fadeIn} className="pt-24 mb-20">
           <div className="flex flex-col md:flex-row md:items-center space-y-6 md:space-y-0 md:space-x-6 mb-12">
@@ -141,7 +284,7 @@ const Portfolio = () => {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <SectionHeading title="Publications" href="#" />
+          <SectionHeading title="Publications" href="/publications" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {publications.map((pub, index) => (
               <motion.div
@@ -161,7 +304,7 @@ const Portfolio = () => {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <SectionHeading title="Projects" href="#" />
+          <SectionHeading title="Projects" href="/projects" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, index) => (
               <motion.div

@@ -1,12 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Navbar } from '../components/Navbar';
-import AboutContent from '../components/AboutContent';
+import AboutPage from '../components/About';
 ---
 
 <Layout title="About Me">
-  <div data-scroll>
+  <div class="min-h-screen">
     <Navbar client:load/>
-    <AboutContent client:load />
+    <AboutPage client:load />
   </div>
 </Layout>
