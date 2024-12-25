@@ -98,6 +98,8 @@ export const AboutSection = () => {
             <img
               src="https://picsum.photos/800/1000"
               alt="Working on laptop"
+              width={800}
+              height={1000}
               className="w-full aspect-[4/5] object-cover rounded-[20px] shadow-xl"
             />
           </motion.div>
@@ -110,6 +112,8 @@ export const AboutSection = () => {
             <img
               src="https://picsum.photos/800/800"
               alt="Portrait"
+              width={800}
+              height={800}
               className="w-full aspect-square object-cover rounded-[20px] shadow-xl border-4 border-black/20"
             />
           </motion.div>
@@ -118,8 +122,6 @@ export const AboutSection = () => {
         {/* Right Column - Text Content */}
         <div className="space-y-6 relative z-30">
           <SectionHeading title="About Me"/>
-          <p className="text-white text-xl mb-8">Thanks for stopping by! Here's a bit about me.</p>
-          
           <p className="text-white leading-relaxed">
             Hello <span className="text-yellow-400">👋</span>, I'm{' '}
             <GradientLink href="#">Antareep</GradientLink>, a third year Computer Science
@@ -217,6 +219,8 @@ export const ExperienceSection = () => {
                   <img
                     src={experience.logoUrl}
                     alt={`${experience.company} logo`}
+                    width={48}
+                    height={48}
                     className="w-12 h-12 rounded-full object-cover border-2 border-white/10"
                   />
                   <div>

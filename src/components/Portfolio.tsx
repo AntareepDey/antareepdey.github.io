@@ -194,19 +194,19 @@ const Portfolio = () => {
       title: "Attention is all you need: An introduction to transformers",
       date: "Oct 2024",
       description: "We propose a new simple network architecture, the Transformer, based solely on attention mechanisms...",
-      image: "/src/p1.png"
+      image: "/src/p1.avif"
     },
     {
       title: "Understanding Neural Networks: A Comprehensive Guide",
       date: "Oct 2024",
       description: "An in-depth exploration of neural network architectures and their applications...",
-      image: "/src/p2.png"
+      image: "/src/p2.avif"
     },
     {
       title: "The Future of Computer Vision",
       date: "Oct 2024",
       description: "Exploring the latest advancements in computer vision and their real-world applications...",
-      image: "/src/p3.png"
+      image: "/src/p3.avif"
     }
   ];
 
@@ -250,7 +250,7 @@ const Portfolio = () => {
               whileHover={{ scale: 1.05 }}
               className="w-24 h-24 rounded-[20px] overflow-hidden ring-2 ring-purple-500/20"
             >
-              <img src="/src/Antareep.png" alt="Profile" className="w-full h-full object-cover" />
+              <img src="/src/Antareep.avif" alt="Profile" width="96" height="96" className="w-full h-full object-cover" />
             </motion.div>
             <div>
               <h1 className="text-4xl font-bold gradient-heading mb-2">
@@ -260,15 +260,12 @@ const Portfolio = () => {
             </div>
           </div>
 
-          <motion.p 
-            {...fadeIn}
-            className="text-gray-300 w-full max-w-3xl mb-8 leading-relaxed"
-          >
+          <p className="text-gray-300 w-full max-w-3xl mb-8 leading-relaxed">
             I'm a third-year Computer Science student with a deep passion for Machine Learning. 
             I'm particularly fascinated by Natural Language Processing and Computer Vision. Outside of coding, 
             you'll probably catch me cheering for my favorite Formula One team, admiring beautiful architecture, 
             or snapping photos of the world around me.
-          </motion.p>
+          </p>
 
           <motion.div className="flex space-x-4 mb-16">
             {socialIcons.map((social, index) => (

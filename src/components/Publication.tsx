@@ -16,7 +16,7 @@ export const Publication: React.FC<PublicationProps> = ({
   image
 }) => (
   <Card>
-    <img src={image} alt={title} className="w-full rounded-[20px] mb-4 hover:opacity-90 transition-opacity" />
+    <img src={image} alt={title} width="400" height="225" className="w-full rounded-[20px] mb-4" />
     <h3 className="text-white font-semibold mb-2">{title}</h3>
     <p className="text-gray-400 text-sm mb-4">{date}</p>
     <p className="text-gray-500 text-sm mb-4">{description}</p>
