@@ -3,7 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { Project } from '../components/Project';
-import { motion } from 'framer-motion';
 
 const projects = [
   {
@@ -56,13 +55,13 @@ const projects = [
     <Navbar client:load />
     
     <main class="px-6 pt-32">
-      <div class="max-w-3xl mx-auto">
+      <div class="max-w-6xl mx-auto">
         <div class="mb-12">
           <h1 class="text-4xl font-bold gradient-heading mb-4">Projects</h1>
           <p class="text-gray-400">A collection of my work in machine learning, web development, and more.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {projects.map((project) => (
             <div data-scroll>
               <Project 

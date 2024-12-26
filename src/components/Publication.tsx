@@ -1,5 +1,5 @@
 import React from 'react';
-import { siGithub } from 'simple-icons';
+import { SiGithub } from 'react-icons/si';
 import { Card } from './Card';
 
 interface PublicationProps {
@@ -27,15 +27,7 @@ export const Publication: React.FC<PublicationProps> = ({
         rel="noopener noreferrer"
         className="text-gray-400 hover:text-white transition-colors"
       >
-        <svg
-          role="img"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-4 h-4"
-          fill="currentColor"
-        >
-          <path d={siGithub.path} />
-        </svg>
+        <SiGithub size={16} />
       </a>
       <a 
         href="#read" 

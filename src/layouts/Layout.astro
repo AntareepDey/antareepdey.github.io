@@ -92,11 +92,15 @@ const { title } = Astro.props;
           transform: none !important;
           transition: none !important;
         }
-
-        .gradient-heading {
+        .text-hover {
           animation: none !important;
-          background-size: 100% 100% !important;
-          background-position: 0 0 !important;
+          transform: none !important;
+          transition: none !important;
+        }
+        .glass-card:hover,
+        img:hover,
+        .text-hover:hover {
+          transform: none !important;
         }
       }
 
@@ -193,6 +197,8 @@ const { title } = Astro.props;
 
       // Scroll animations
       const observeScrollElements = () => {
+        if (!isDesktop) return;
+
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach(entry => {
@@ -219,4 +225,3 @@ const { title } = Astro.props;
       });
     </script>
   </body>
-</html>

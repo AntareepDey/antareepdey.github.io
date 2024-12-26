@@ -1,11 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { SiReact, SiNodedotjs, SiMysql, SiGit, SiHtml5, SiCss3, SiJavascript, SiTailwindcss, SiFigma, SiGithub, SiNextdotjs } from 'react-icons/si';
 import { Footer } from './Footer';
-import { 
-  siReact, siNodedotjs, siMysql, siGit,
-  siHtml5, siCss3, siJavascript, siTailwindcss,
-  siFigma, siGithub, siNextdotjs
-} from 'simple-icons';
 
 // SectionHeading Component
 interface SectionHeadingProps {
@@ -31,8 +27,8 @@ const ArrowIcon = () => (
     <path
       d="M9 6l6 6-6 6"
       stroke="url(#arrow-gradient)"
-      fill="1"
-      strokeWidth="3"
+      fill="none"
+      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
@@ -262,19 +258,18 @@ export const ExperienceSection = () => {
 // Skills Section Component
 export const SkillsSection = () => {
   const skills = [
-    { icon: siFigma },
-    { icon: siGithub },
-    { icon: siHtml5 },
-    { icon: siCss3 },
-    { icon: siJavascript },
-    { icon: siTailwindcss },
-    { icon: siNodedotjs },
-    { icon: siMysql },
-    { icon: siGit },
-    { icon: siNextdotjs },
-    { icon: siReact }
+    { icon: SiFigma },
+    { icon: SiGithub },
+    { icon: SiHtml5 },
+    { icon: SiCss3 },
+    { icon: SiJavascript },
+    { icon: SiTailwindcss },
+    { icon: SiNodedotjs },
+    { icon: SiMysql },
+    { icon: SiGit },
+    { icon: SiNextdotjs },
+    { icon: SiReact }
   ];
-
   return (
     <motion.section
       initial={{ opacity: 0, y: 20 }}
@@ -304,20 +299,12 @@ const Card: React.FC<{ children: React.ReactNode; className?: string }> = ({ chi
 );
 
 // Skill Icon Component (used by Skills Section)
-const SkillIcon = ({ icon }: { icon: any }) => (
+const SkillIcon = ({ icon: Icon }: { icon: any }) => (
   <motion.div
     whileHover={{ scale: 1.1 }}
     className="w-12 h-12 glass-card rounded-[20px] flex items-center justify-center hover:bg-white/10 transition-colors"
   >
-    <svg
-      role="img"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      className="w-6 h-6"
-      fill="currentColor"
-    >
-      <path d={icon.path} />
-    </svg>
+    <Icon className="w-6 h-6" />
   </motion.div>
 );
 

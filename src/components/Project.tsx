@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from './Card';
-import { siGithub } from 'simple-icons';
+import { SiGithub } from 'react-icons/si';
 
 interface ProjectProps {
   title: string;
@@ -30,15 +30,7 @@ export const Project: React.FC<ProjectProps> = ({
         rel="noopener noreferrer"
         className="inline-block text-gray-400 hover:text-white transition-colors"
       >
-        <svg
-          role="img"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-5 h-5"
-          fill="currentColor"
-        >
-          <path d={siGithub.path} />
-        </svg>
+        <SiGithub size={20} />
       </a>
     )}
   </Card>

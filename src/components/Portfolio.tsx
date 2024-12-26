@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { siLinkedin, siGithub, siTwitter, siGoogle } from 'simple-icons';
+import { SiLinkedin, SiGithub, SiX, SiGoogle } from 'react-icons/si';
 import { Card } from './Card';
 import { Footer } from './Footer';
+import { Publication } from './Publication';
+import { Project } from './Project';
 
 // Integrated SectionHeading Component
 const ArrowIcon = () => (
@@ -64,111 +66,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({ title, href }) => (
   </div>
 );
 
-// Integrated Publication Component
-interface PublicationProps {
-  title: string;
-  date: string;
-  description: string;
-  image: string;
-}
-
-const Publication: React.FC<PublicationProps> = ({
-  title,
-  date,
-  description,
-  image
-}) => (
-  <Card>
-    <img src={image} alt={title} className="w-full rounded-[20px] mb-4 hover:opacity-90 transition-opacity" />
-    <h3 className="text-white font-semibold mb-2">{title}</h3>
-    <p className="text-gray-400 text-sm mb-4">{date}</p>
-    <p className="text-gray-500 text-sm mb-4">{description}</p>
-    <div className="flex items-center space-x-4">
-      <a 
-        href="#github" 
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-gray-400 hover:text-white transition-colors"
-      >
-        <svg
-          role="img"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-4 h-4"
-          fill="currentColor"
-        >
-          <path d={siGithub.path} />
-        </svg>
-      </a>
-      <a 
-        href="#read" 
-        className="text-gray-400 hover:text-white transition-colors text-sm"
-      >
-        Read
-      </a>
-    </div>
-  </Card>
-);
-
-// Integrated Project Component
-interface ProjectProps {
-  title: string;
-  year: string;
-  description: string;
-  gradient: string;
-  githubUrl?: string;
-}
-
-const Project: React.FC<ProjectProps> = ({
-  title,
-  year,
-  description,
-  gradient,
-  githubUrl
-}) => (
-  <Card>
-    <div className={`${gradient} rounded-lg p-8 mb-4`}>
-      <h3 className="text-2xl font-bold text-white">{title}</h3>
-    </div>
-    <p className="text-sm text-gray-400 mb-2">{year}</p>
-    <p className="text-gray-300 mb-4">{description}</p>
-    {githubUrl && (
-      <a 
-        href={githubUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block text-gray-400 hover:text-white transition-colors"
-      >
-        <svg
-          role="img"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-5 h-5"
-          fill="currentColor"
-        >
-          <path d={siGithub.path} />
-        </svg>
-      </a>
-    )}
-  </Card>
-);
-
-const fadeIn = {
-  initial: { y: 20 },
-  animate: { y: 0 },
-  transition: { duration: 0.6 }
-};
-
-const staggerContainer = {
-  initial: {},
-  animate: {
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
-
-const SocialIcon = ({ path, href }: { path: string; href: string }) => (
+const SocialIcon = ({ icon: Icon, href }: { icon: any; href: string }) => (
   <motion.a
     href={href}
     target="_blank"
@@ -176,15 +74,7 @@ const SocialIcon = ({ path, href }: { path: string; href: string }) => (
     whileHover={{ scale: 1.1, y: -2 }}
     className="text-gray-400 hover:text-white transition-colors"
   >
-    <svg
-      role="img"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      className="w-6 h-6"
-      fill="currentColor"
-    >
-      <path d={path} />
-    </svg>
+    <Icon size={24} />
   </motion.a>
 );
 
@@ -235,10 +125,10 @@ const Portfolio = () => {
   ];
 
   const socialIcons = [
-    { icon: siLinkedin, href: "#linkedin" },
-    { icon: siGithub, href: "#github" },
-    { icon: siTwitter, href: "#twitter" },
-    { icon: siGoogle, href: "#google" }
+    { icon: SiLinkedin, href: "#linkedin" },
+    { icon: SiGithub, href: "#github" },
+    { icon: SiX, href: "#twitter" },
+    { icon: SiGoogle, href: "#google" }
   ];
 
   return (
@@ -250,7 +140,13 @@ const Portfolio = () => {
               whileHover={{ scale: 1.05 }}
               className="w-24 h-24 rounded-[20px] overflow-hidden ring-2 ring-purple-500/20"
             >
-              <img src="/src/Antareep.avif" alt="Profile" width="96" height="96" className="w-full h-full object-cover" />
+              <img 
+                src="/src/Antareep.avif" 
+                alt="Profile" 
+                width="96" 
+                height="96" 
+                className="w-full h-full object-cover" 
+              />
             </motion.div>
             <div>
               <h1 className="text-4xl font-bold gradient-heading mb-2">
@@ -261,15 +157,13 @@ const Portfolio = () => {
           </div>
 
           <p className="text-gray-300 w-full max-w-3xl mb-8 leading-relaxed">
-            I'm a third-year Computer Science student with a deep passion for Machine Learning. 
-            I'm particularly fascinated by Natural Language Processing and Computer Vision. Outside of coding, 
-            you'll probably catch me cheering for my favorite Formula One team, admiring beautiful architecture, 
-            or snapping photos of the world around me.
+            I'm a third-year Computer Science student with a fascination for Natural Language Processing and Computer Vision. In my spare time, 
+            you'll probably catch me cheering for my favorite Formula One team, admiring beautiful architecture,or snapping photos of the world around me.
           </p>
 
           <motion.div className="flex space-x-4 mb-16">
             {socialIcons.map((social, index) => (
-              <SocialIcon key={index} path={social.icon.path} href={social.href} />
+              <SocialIcon key={index} icon={social.icon} href={social.href} />
             ))}
           </motion.div>
         </motion.div>
@@ -284,10 +178,7 @@ const Portfolio = () => {
           <SectionHeading title="Publications" href="/publications" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {publications.map((pub, index) => (
-              <motion.div
-                key={index}
-                variants={fadeIn}
-              >
+              <motion.div key={index} variants={fadeIn}>
                 <Publication {...pub} />
               </motion.div>
             ))}
@@ -304,10 +195,7 @@ const Portfolio = () => {
           <SectionHeading title="Projects" href="/projects" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, index) => (
-              <motion.div
-                key={index}
-                variants={fadeIn}
-              >
+              <motion.div key={index} variants={fadeIn}>
                 <Project {...project} />
               </motion.div>
             ))}
@@ -318,6 +206,21 @@ const Portfolio = () => {
       </main>
     </div>
   );
+};
+
+const fadeIn = {
+  initial: { y: 20 },
+  animate: { y: 0 },
+  transition: { duration: 0.6 }
+};
+
+const staggerContainer = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
 };
 
 export default Portfolio;
