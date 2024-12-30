@@ -5,6 +5,7 @@ import compressor from "astro-compressor";
 
 export default defineConfig({
   site:'https://antareepdey.github.io',
+  format: 'file',
   output: 'static',
   integrations: [tailwind(), react(),compressor({ gzip: false, brotli: true })],
   devToolbar: {

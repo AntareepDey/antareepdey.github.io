@@ -110,21 +110,21 @@ const Portfolio = () => {
       title: "See-curity",
       year: "2024",
       description: "A system that records surveillance footage based on the presence of human activity.",
-      image: "/src/assets/Surveillence.avif",
+      image: "/Surveillence.avif",
       githubUrl: "https://github.com/AntareepDey/Survellience-Footage-Optimization"
     },
     {
       title: "Signal Compression",
       year: "2024",
       description: "Paper Implementation: Hybrid Compression Method for PQD Signals in Active Distribution Networks.",
-      image: "/src/assets/Singnal.avif",
+      image: "/Singnal.avif",
       githubUrl: "https://github.com/AntareepDey/PQD-SignalCompression"
     },
     {
       title: "SymptoCareAI",
       year: "2023",
       description: "A project that harnesses the power of LLM's to provide safe medical advice.",
-      image: "/src/assets/Symptocare.avif",
+      image: "/Symptocare.avif",
       githubUrl: "https://github.com/AntareepDey/SymptoCareAI"
     }
 ];
@@ -146,7 +146,7 @@ const Portfolio = () => {
               className="w-24 h-24 rounded-[20px] overflow-hidden ring-2 ring-purple-500/20"
             >
               <img 
-                src="/src/assets/Antareep.avif" 
+                src="/Antareep.avif" 
                 alt="Profile" 
                 width="96" 
                 height="96" 

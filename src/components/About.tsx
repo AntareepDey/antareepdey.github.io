@@ -63,7 +63,7 @@ export const AboutSection = () => {
             className="absolute top-5 left-0 w-[70%] md:w-[65%] z-10 cursor-pointer"
           >
             <img
-              src="src/assets/9-16.avif"
+              src="/9-16.avif"
               alt="Working on laptop"
               width={900}
               height={1600}
@@ -88,7 +88,7 @@ export const AboutSection = () => {
             className="absolute top-[50%] right-0 w-[70%] md:w-[65%] z-20 cursor-pointer"
           >
             <img
-              src="/src/assets/5-4.avif"
+              src="/5-4.avif"
               alt="Portrait"
               width={800}
               height={1000}
@@ -109,7 +109,7 @@ export const AboutSection = () => {
             className="absolute top-[80%] left-5 w-[65%] z-30 hidden lg:block cursor-pointer"
           >
             <img
-              src="/src/assets/1-1.avif"
+              src="/1-1.avif"
               alt="Another perspective"
               width={600}
               height={600}
@@ -150,7 +150,7 @@ export const AboutSection = () => {
           </p>
 
           <motion.a
-            href="/src/assets/resume.pdf"
+            href="/resume.pdf"
             whileHover={{ scale: 1.05 }}
             className="inline-block text-lg font-semibold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
           >
@@ -168,7 +168,7 @@ export const ExperienceSection = () => {
     {
       title: 'Research Intern',
       company: 'Indian Institute of Technology, Kharagpur',
-      logoUrl: '/src/assets/iitkgplogo.avif',
+      logoUrl: '/iitkgplogo.avif',
       date: 'Oct 2024 - Present',
       summary: 'Conducted research on computer vision and studied the impact of synthetic data on vision models under Professor Abir Das at IIT Kharagpur.Developed and optimized AI systems to create enhanced training datasets while analyzing their effectiveness through various experiments.',
       responsibilities: [
@@ -180,7 +180,7 @@ export const ExperienceSection = () => {
     {
       title: 'Student Instructor',
       company: 'Code in Place, Stanford University',
-      logoUrl: 'src/assets/stanford.avif',
+      logoUrl: '/stanford.avif',
       date: 'April 2023 - June 2023',
       summary: 'Served as a Teaching Assistant for Stanford\'s CS106A-based programming course, leading weekly sessions and providing instruction to students through interactive lessons and problem-solving.',
       responsibilities: [
