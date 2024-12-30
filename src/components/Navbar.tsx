@@ -34,16 +34,17 @@ export const Navbar = () => {
   );
 
   const navItems = [
-    { name: 'Photography', href: '#' },
-    { name: 'Blog', href: '#' },
+    { name: 'Photography', href: '/404' },
+    { name: 'Blog', href: 'https://chaisquared.hashnode.dev/' },
     { name: 'About', href: '/about' }
   ];
 
   if (isMobile) {
     return (
       <motion.nav
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ y: 20 }}
+        whileHover={{ scale: 1.02, y: -5 }}
+        // animate={{ opacity: 1, y: 0 }}
         // transition={{ duration: 0.3, type: "spring", stiffness: 260, damping: 20 }}
         className="fixed top-0 left-0 right-0 p-4 z-50"
       >

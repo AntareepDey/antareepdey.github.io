@@ -9,37 +9,47 @@ const publications = [
     title: "Attention is all you need: An introduction to transformers",
     date: "Oct 2024",
     description: "We propose a new simple network architecture, the Transformer, based solely on attention mechanisms. Through extensive experiments, we demonstrate the effectiveness of this approach in natural language processing tasks.",
-    image: "/src/p1.png"
+    image: "https://picsum.photos/800/400?random=1",
+    githubUrl: "https://github.com/yourusername/transformer-paper",
+    readUrl: "https://arxiv.org/abs/1706.03762"
   },
   {
     title: "Understanding Neural Networks: A Comprehensive Guide",
     date: "Oct 2024",
     description: "An in-depth exploration of neural network architectures and their applications. This paper provides a thorough analysis of various neural network topologies and their practical implementations.",
-    image: "/src/p2.png"
+    image: "https://picsum.photos/800/400?random=2",
+    readUrl: "#paper-link"
   },
   {
     title: "The Future of Computer Vision",
     date: "Oct 2024",
     description: "Exploring the latest advancements in computer vision and their real-world applications. We discuss cutting-edge techniques and their potential impact on various industries.",
-    image: "/src/p3.png"
+    image: "https://picsum.photos/800/400?random=3",
+    githubUrl: "https://github.com/yourusername/cv-future",
+    readUrl: "#paper-link"
   },
   {
     title: "Deep Learning in Medical Imaging",
     date: "Sept 2024",
     description: "A comprehensive study on applying deep learning techniques to medical image analysis, focusing on improving diagnostic accuracy and efficiency in healthcare.",
-    image: "/src/p1.png"
+    image: "https://picsum.photos/800/400?random=4",
+    githubUrl: "https://github.com/yourusername/medical-imaging",
+    readUrl: "#paper-link"
   },
   {
     title: "Reinforcement Learning: Theory and Practice",
     date: "Aug 2024",
     description: "An extensive review of reinforcement learning algorithms and their practical applications in real-world scenarios, including robotics and game theory.",
-    image: "/src/p2.png"
+    image: "https://picsum.photos/800/400?random=5",
+    readUrl: "#paper-link"
   },
   {
     title: "Natural Language Processing: State of the Art",
     date: "July 2024",
     description: "A detailed analysis of current trends and future directions in natural language processing, examining breakthrough technologies and their implications.",
-    image: "/src/p3.png"
+    image: "https://picsum.photos/800/400?random=6",
+    githubUrl: "https://github.com/yourusername/nlp-sota",
+    readUrl: "#paper-link"
   }
 ];
 ---
@@ -60,10 +70,7 @@ const publications = [
             <div data-scroll>
               <Publication 
                 client:visible
-                title={publication.title}
-                date={publication.date}
-                description={publication.description}
-                image={publication.image}
+                {...publication}
               />
             </div>
           ))}

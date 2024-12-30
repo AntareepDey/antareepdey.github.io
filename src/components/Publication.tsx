@@ -7,13 +7,17 @@ interface PublicationProps {
   date: string;
   description: string;
   image: string;
+  githubUrl?: string;
+  readUrl?: string;
 }
 
 export const Publication: React.FC<PublicationProps> = ({
   title,
   date,
   description,
-  image
+  image,
+  githubUrl,
+  readUrl
 }) => (
   <Card>
     <img src={image} alt={title} width="400" height="225" className="w-full rounded-[20px] mb-4" />
@@ -22,7 +26,7 @@ export const Publication: React.FC<PublicationProps> = ({
     <p className="text-gray-500 text-sm mb-4">{description}</p>
     <div className="flex items-center space-x-4">
       <a 
-        href="#github" 
+        href={githubUrl} 
         target="_blank"
         rel="noopener noreferrer"
         className="text-gray-400 hover:text-white transition-colors"
@@ -30,7 +34,7 @@ export const Publication: React.FC<PublicationProps> = ({
         <SiGithub size={16} />
       </a>
       <a 
-        href="#read" 
+        href={readUrl} 
         className="text-gray-400 hover:text-white transition-colors text-sm"
       >
         Read

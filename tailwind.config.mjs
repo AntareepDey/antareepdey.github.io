@@ -4,8 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter var', 'Inter', 'system-ui', 'sans-serif'],
-        display: ['Plus Jakarta Sans', 'Inter var', 'system-ui', 'sans-serif'],
+        sans: ['Inter var', 'Inter', 'system-ui', 'sans-serif']
       },
       animation: {
         'gradient': 'gradient 8s linear infinite',

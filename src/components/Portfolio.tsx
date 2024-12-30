@@ -1,9 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { SiLinkedin, SiGithub, SiX, SiGoogle } from 'react-icons/si';
-import { Card } from './Card';
+import { SiLinkedin, SiGithub, SiQuora, SiInstagram } from 'react-icons/si';
 import { Footer } from './Footer';
-import { Publication } from './Publication';
+// import { Publication } from './Publication';
 import { Project } from './Project';
 
 // Integrated SectionHeading Component
@@ -73,75 +72,81 @@ const SocialIcon = ({ icon: Icon, href }: { icon: any; href: string }) => (
     rel="noopener noreferrer"
     whileHover={{ scale: 1.1, y: -2 }}
     className="text-gray-400 hover:text-white transition-colors"
+    aria-label="Icon"
   >
-    <Icon size={24} />
+    <Icon size={24}/>
   </motion.a>
 );
 
 const Portfolio = () => {
-  const publications = [
-    {
-      title: "Attention is all you need: An introduction to transformers",
-      date: "Oct 2024",
-      description: "We propose a new simple network architecture, the Transformer, based solely on attention mechanisms...",
-      image: "/src/p1.avif"
-    },
-    {
-      title: "Understanding Neural Networks: A Comprehensive Guide",
-      date: "Oct 2024",
-      description: "An in-depth exploration of neural network architectures and their applications...",
-      image: "/src/p2.avif"
-    },
-    {
-      title: "The Future of Computer Vision",
-      date: "Oct 2024",
-      description: "Exploring the latest advancements in computer vision and their real-world applications...",
-      image: "/src/p3.avif"
-    }
-  ];
+  // const publications = [
+  //   {
+  //   title: "Attention is all you need: An introduction to transformers",
+  //   date: "Oct 2024",
+  //   description: "We propose a new simple network architecture, the Transformer, based solely on attention mechanisms. Through extensive experiments, we demonstrate the effectiveness of this approach in natural language processing tasks.",
+  //   image: "https://picsum.photos/800/400?random=1",
+  //   githubUrl: "https://github.com/yourusername/transformer-paper",
+  //   readUrl: "https://arxiv.org/abs/1706.03762"
+  // },
+  // {
+  //   title: "Understanding Neural Networks: A Comprehensive Guide",
+  //   date: "Oct 2024",
+  //   description: "An in-depth exploration of neural network architectures and their applications. This paper provides a thorough analysis of various neural network topologies and their practical implementations.",
+  //   image: "https://picsum.photos/800/400?random=2",
+  //   readUrl: "#paper-link"
+  // },
+  // {
+  //   title: "The Future of Computer Vision",
+  //   date: "Oct 2024",
+  //   description: "Exploring the latest advancements in computer vision and their real-world applications. We discuss cutting-edge techniques and their potential impact on various industries.",
+  //   image: "https://picsum.photos/800/400?random=3",
+  //   githubUrl: "https://github.com/yourusername/cv-future",
+  //   readUrl: "#paper-link"
+  // }
+  // ];
 
   const projects = [
     {
-      title: "Resnet20",
-      year: "2023",
-      description: "Deep Convolutional Neural network for object recognition",
-      gradient: "bg-gradient-to-br from-purple-400/20 to-purple-600/20",
-      githubUrl: "#href"
+      title: "See-curity",
+      year: "2024",
+      description: "A system that records surveillance footage based on the presence of human activity.",
+      image: "/src/assets/Surveillence.avif",
+      githubUrl: "https://github.com/AntareepDey/Survellience-Footage-Optimization"
     },
     {
-      title: "AntiGPT",
-      year: "2023",
-      description: "A tool to detect AI generated text",
-      gradient: "bg-gradient-to-br from-orange-400/20 to-pink-600/20",
-      githubUrl: "#href"
+      title: "Signal Compression",
+      year: "2024",
+      description: "Paper Implementation: Hybrid Compression Method for PQD Signals in Active Distribution Networks.",
+      image: "/src/assets/Singnal.avif",
+      githubUrl: "https://github.com/AntareepDey/PQD-SignalCompression"
     },
     {
-      title: "DanceGPT",
+      title: "SymptoCareAI",
       year: "2023",
-      description: "DanceGPT is your AI-based personal dance guide",
-      gradient: "bg-gradient-to-br from-cyan-400/20 to-blue-600/20",
-      githubUrl: "#href"
+      description: "A project that harnesses the power of LLM's to provide safe medical advice.",
+      image: "/src/assets/Symptocare.avif",
+      githubUrl: "https://github.com/AntareepDey/SymptoCareAI"
     }
-  ];
+];
 
   const socialIcons = [
-    { icon: SiLinkedin, href: "#linkedin" },
-    { icon: SiGithub, href: "#github" },
-    { icon: SiX, href: "#twitter" },
-    { icon: SiGoogle, href: "#google" }
+    { icon: SiLinkedin, href: "https://www.linkedin.com/in/antareepdey/" },
+    { icon: SiGithub, href: "https://github.com/AntareepDey" },
+    { icon: SiQuora, href: "https://www.quora.com/profile/Antareep-Dey" },
+    { icon: SiInstagram, href: "https://www.instagram.com/deyantareep/" }
   ];
 
   return (
     <div className="min-h-screen relative overflow-hidden font-sans">
       <main className="relative px-6 pt-24">
         <motion.div {...fadeIn} className="pt-24 mb-20">
-          <div className="flex flex-col md:flex-row md:items-center space-y-6 md:space-y-0 md:space-x-6 mb-12">
+          <div className="flex flex-col md:flex-row md:items-center space-y-6 md:space-y-0 md:space-x-6 mb-6">
             <motion.div 
               whileHover={{ scale: 1.05 }}
               className="w-24 h-24 rounded-[20px] overflow-hidden ring-2 ring-purple-500/20"
             >
               <img 
-                src="/src/Antareep.avif" 
+                src="/src/assets/Antareep.avif" 
                 alt="Profile" 
                 width="96" 
                 height="96" 
@@ -152,15 +157,13 @@ const Portfolio = () => {
               <h1 className="text-4xl font-bold gradient-heading mb-2">
                 Antareep Dey
               </h1>
-              <p className="text-gray-400 font-display">Machine Learning Engineer</p>
+              <p className="text-gray-400 font-sans">Machine Learning Engineer</p>
             </div>
           </div>
 
-          <p className="text-gray-300 w-full max-w-3xl mb-8 leading-relaxed">
-            I'm a third-year Computer Science student with a fascination for Natural Language Processing and Computer Vision. In my spare time, 
-            you'll probably catch me cheering for my favorite Formula One team, admiring beautiful architecture,or snapping photos of the world around me.
+          <p className="text-gray-300 w-full max-w-3xl mb-6 leading-relaxed">
+            I'm a third-year Computer Science undergrad student with a fascination for Natural Language Processing and Computer Vision. In my free time, you'll find me cheering for my F1 team, buried in books (and probably surviving on coffee), or capturing life's moments through my camera!
           </p>
-
           <motion.div className="flex space-x-4 mb-16">
             {socialIcons.map((social, index) => (
               <SocialIcon key={index} icon={social.icon} href={social.href} />
@@ -168,7 +171,7 @@ const Portfolio = () => {
           </motion.div>
         </motion.div>
 
-        <motion.section 
+        {/* <motion.section 
           variants={staggerContainer}
           initial="initial"
           whileInView="animate"
@@ -183,7 +186,7 @@ const Portfolio = () => {
               </motion.div>
             ))}
           </div>
-        </motion.section>
+        </motion.section> */}
 
         <motion.section 
           variants={staggerContainer}

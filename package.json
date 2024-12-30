@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-website",
+  "name": "antareep-portfolio-site",
   "type": "module",
   "version": "2.0.4",
   "private": true,
@@ -16,6 +16,7 @@
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "astro": "^4.1.2",
+    "astro-compressor": "^1.0.0",
     "framer-motion": "^10.18.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

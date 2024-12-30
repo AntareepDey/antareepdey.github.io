@@ -6,46 +6,67 @@ import { Project } from '../components/Project';
 
 const projects = [
   {
-    title: "HUDN",
-    year: "2023",
-    description: "A platform to showcase your side projects. Built with Next.js and TypeScript, featuring real-time updates and a modern UI.",
-    gradient: "bg-gradient-to-br from-purple-400/20 to-purple-600/20",
-    githubUrl: "https://github.com/yourusername/hudn"
+    title: "See-curity",
+    year: "2024",
+    description: "A system that records surveillance footage based on the presence of human activity.",
+    image: "/src/assets/Surveillence.avif",
+    githubUrl: "https://github.com/AntareepDey/Survellience-Footage-Optimization"
   },
   {
-    title: "AntiGPT",
-    year: "2023",
-    description: "A sophisticated tool to detect AI-generated text using advanced NLP techniques and machine learning algorithms.",
-    gradient: "bg-gradient-to-br from-orange-400/20 to-pink-600/20",
-    githubUrl: "https://github.com/yourusername/antigpt"
+    title: "Signal Compression",
+    year: "2024",
+    description: "Paper Implementation: Hybrid Compression Method for PQD Signals in Active Distribution Networks",
+    image: "/src/assets/Singnal.avif",
+    githubUrl: "https://github.com/AntareepDey/PQD-SignalCompression"
   },
   {
-    title: "TourX",
-    year: "2023",
-    description: "Your AI-based personal guide that provides contextual information about tourist destinations using computer vision.",
-    gradient: "bg-gradient-to-br from-cyan-400/20 to-blue-600/20",
-    githubUrl: "https://github.com/yourusername/tourx"
+    title: "Panels Wallpapers",
+    year: "2024",
+    description: "A small script to download all the wallpapers from the new PANELS app",
+    image: "/src/assets/wallpaper.avif",
+    githubUrl: "https://github.com/AntareepDey/Get-Panels-wallpapers"
   },
   {
-    title: "CodeMentor",
-    year: "2023",
-    description: "An AI-powered coding assistant that helps developers write better code through real-time suggestions and code analysis.",
-    gradient: "bg-gradient-to-br from-green-400/20 to-emerald-600/20",
-    githubUrl: "#"
+    title: "SeeFood",
+    year: "2024",
+    description: "The Shazam for Food (Well kinda!). Check if your food is a hotdog or not.",
+    image: "/src/assets/Seefood.avif",
+    githubUrl: "https://github.com/AntareepDey/SeeFood"
   },
   {
-    title: "DataViz Pro",
+    title: "SymptoCareAI",
     year: "2023",
-    description: "A data visualization tool that transforms complex datasets into intuitive, interactive visual representations.",
-    gradient: "bg-gradient-to-br from-yellow-400/20 to-orange-600/20",
-    githubUrl: "#"
+    description: "A project that harnesses the power of LLM's to provide safe medical advice.",
+    image: "/src/assets/Symptocare.avif",
+    githubUrl: "https://github.com/AntareepDey/SymptoCareAI"
   },
   {
-    title: "ML Pipeline",
+    title: "Prolog Calc",
     year: "2023",
-    description: "An end-to-end machine learning pipeline framework that streamlines the process of training and deploying ML models.",
-    gradient: "bg-gradient-to-br from-red-400/20 to-rose-600/20",
-    githubUrl: "#"
+    description: "A calculator application written in Prolog.",
+    image: "/src/assets/prolog.avif",
+    githubUrl: "https://github.com/AntareepDey/Prolog_calc"
+  },
+  {
+    title: "Marketing Management System",
+    year: "2022",
+    description: "A flask based web app that helps in marketing and sales management",
+    image: "/src/assets/MarketingMgt.avif",
+    githubUrl: "https://github.com/AntareepDey/Marketing-management-sytem"
+  },
+  {
+    title: "PyPad",
+    year: "2021",
+    description: "A notepad clone written in Python using tkinter (cuz why not!)",
+    image: "/src/assets/Pypad.avif",
+    githubUrl: "https://github.com/AntareepDey/PyPad"
+  },
+  {
+    title: "Hangman",
+    year: "2020",
+    description: "A fun hangman game written in Python using Tkinter.",
+    image: "/src/assets/Hangman.avif",
+    githubUrl: "https://github.com/AntareepDey/hangmanproject"
   }
 ];
 ---
@@ -53,7 +74,6 @@ const projects = [
 <Layout title="Projects - Antareep Dey">
   <div class="min-h-screen">
     <Navbar client:load />
-    
     <main class="px-6 pt-32">
       <div class="max-w-6xl mx-auto">
         <div class="mb-12">
@@ -66,11 +86,7 @@ const projects = [
             <div data-scroll>
               <Project 
                 client:visible
-                title={project.title}
-                year={project.year}
-                description={project.description}
-                gradient={project.gradient}
-                githubUrl={project.githubUrl}
+                {...project}
               />
             </div>
           ))}

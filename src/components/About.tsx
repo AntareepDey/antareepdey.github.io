@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { SiReact, SiNodedotjs, SiMysql, SiGit, SiHtml5, SiCss3, SiJavascript, SiTailwindcss, SiFigma, SiGithub, SiNextdotjs } from 'react-icons/si';
+import {SiPandas,SiPytorch,SiTensorflow,SiPython, SiCplusplus,SiPlotly,SiGnubash,SiAstro,SiMysql,SiReact,SiGit,SiTailwindcss } from 'react-icons/si';
 import { Footer } from './Footer';
 
 // SectionHeading Component
@@ -8,32 +8,6 @@ interface SectionHeadingProps {
   title: string;
   href?: string;
 }
-
-const ArrowIcon = () => (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
-    className="ml-2 transform group-hover:translate-x-1 transition-transform"
-  >
-    <defs>
-      <linearGradient id="arrow-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#60a5fa" />
-        <stop offset="50%" stopColor="#e879f9" />
-        <stop offset="100%" stopColor="#60a5fa" />
-      </linearGradient>
-    </defs>
-    <path
-      d="M9 6l6 6-6 6"
-      stroke="url(#arrow-gradient)"
-      fill="none"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
 
 const SectionHeading: React.FC<SectionHeadingProps> = ({ title, href }) => (
   <div className="flex justify-between items-center mb-8">
@@ -46,20 +20,6 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({ title, href }) => (
     >
       {title}
     </motion.h2>
-    {href && (
-      <motion.a
-        initial={{ x: 20 }}
-        whileInView={{ x: 0 }}
-        viewport={{ once: true }}
-        href={href}
-        className="flex items-center group"
-      >
-        <span className="bg-gradient-to-r from-blue-400 via-pink-500 to-blue-400 bg-clip-text text-transparent">
-          See all
-        </span>
-        <ArrowIcon />
-      </motion.a>
-    )}
   </div>
 );
 
@@ -83,44 +43,88 @@ export const AboutSection = () => {
       data-scroll
     >
       <div className="grid grid-cols-1 md:grid-cols-[0.8fr,1.2fr] gap-8 md:gap-16 items-start">
-        {/* Left Column - Images */}
-        <div className="relative min-h-[400px] md:min-h-[500px]">
+        {/* Updated Left Column - Images */}
+        <div className="relative min-h-[400px] md:min-h-[630px] mb-16 md:mb-12 md:order-1">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -20, rotate: -10 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
-            className="absolute top-0 left-0 w-[80%] z-10"
+            whileHover={{ 
+              rotate: 0, 
+              scale: 1.05, 
+              zIndex: 40,
+              transition: { duration: 0.3 }
+            }}
+            whileTap={{
+              scale: 1.05,
+              zIndex: 40,
+              transition: { duration: 0.3 }
+            }}
+            transition={{ duration: 0.3 }}
+            className="absolute top-5 left-0 w-[70%] md:w-[65%] z-10 cursor-pointer"
           >
             <img
-              src="https://picsum.photos/800/1000"
+              src="src/assets/9-16.avif"
               alt="Working on laptop"
-              width={800}
-              height={1000}
-              className="w-full aspect-[4/5] object-cover rounded-[20px] shadow-xl"
+              width={900}
+              height={1600}
+              className="w-full aspect-[9/16] object-cover rounded-[20px] shadow-xl transform transition-all duration-300"
             />
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 20, rotate: 15 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4 }}
-            className="absolute bottom-0 right-0 w-[80%] z-20"
+            whileHover={{ 
+              rotate: 0, 
+              scale: 1.05, 
+              zIndex: 40,
+              transition: { duration: 0.3 }
+            }}
+            whileTap={{
+              scale: 1.05,
+              zIndex: 40,
+              transition: { duration: 0.3 }
+            }}
+            transition={{ duration: 0.3 }}
+            className="absolute top-[50%] right-0 w-[70%] md:w-[65%] z-20 cursor-pointer"
           >
             <img
-              src="https://picsum.photos/800/800"
+              src="/src/assets/5-4.avif"
               alt="Portrait"
               width={800}
-              height={800}
-              className="w-full aspect-square object-cover rounded-[20px] shadow-xl border-4 border-black/20"
+              height={1000}
+              className="w-full aspect-[4/5] object-cover rounded-[20px] shadow-xl  transform transition-all duration-300"
+            />
+          </motion.div>
+          {/* Third image - only visible on desktop */}
+          <motion.div
+            initial={{ opacity: 0, x: -5 }}
+            animate={{ opacity: 1, x: 0 }}
+            whileHover={{ 
+              rotate: 0, 
+              scale: 1.05, 
+              zIndex: 40,
+              transition: { duration: 0.3 }
+            }}
+            transition={{ duration: 0.3 }}
+            className="absolute top-[80%] left-5 w-[65%] z-30 hidden lg:block cursor-pointer"
+          >
+            <img
+              src="/src/assets/1-1.avif"
+              alt="Another perspective"
+              width={600}
+              height={600}
+              className="w-full aspect-square object-cover rounded-[20px] shadow-xl  transform transition-all duration-300"
             />
           </motion.div>
         </div>
 
         {/* Right Column - Text Content */}
-        <div className="space-y-6 relative z-30">
+        <div className="space-y-5 relative md:order-2">
+          <br></br>
           <SectionHeading title="About Me"/>
           <p className="text-white leading-relaxed">
             Hello <span className="text-yellow-400">👋</span>, I'm{' '}
-            <GradientLink href="#">Antareep</GradientLink>, a third year Computer Science
+            Antareep, a third year Computer Science
             undergraduate. My journey with code started with solving simple problems, but it quickly
             accelerated into a full-fledged passion for Machine Learning and AI research. I'm fascinated
             by the way machines can learn and make decisions, and I'm constantly trying to push the
@@ -140,16 +144,15 @@ export const AboutSection = () => {
           </p>
 
           <p className="text-white leading-relaxed">
-            My research internship at <GradientLink href="#">IIT Kharagpur</GradientLink> this past
-            semester was a fantastic experience, and I'm actively seeking more opportunities to
-            contribute to groundbreaking projects in AI and Machine Learning. If you're working on
+            I'm actively seeking more opportunities to contribute
+             to groundbreaking projects in AI and Machine Learning. If you're working on
             something innovative let's chat!
           </p>
 
           <motion.a
-            href="/resume.pdf"
+            href="/src/assets/resume.pdf"
             whileHover={{ scale: 1.05 }}
-            className="inline-block text-xl font-semibold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+            className="inline-block text-lg font-semibold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
           >
             Resume
           </motion.a>
@@ -163,37 +166,26 @@ export const AboutSection = () => {
 export const ExperienceSection = () => {
   const experiences = [
     {
-      title: 'Junior Web Developer',
-      company: 'Tech Startup',
-      logoUrl: 'https://picsum.photos/100/100',
-      location: 'Auckland, New Zealand',
-      date: '2024 - Present',
-      summary: 'Developing and maintaining web applications using JavaScript, HTML, and CSS. Collaborating with the team to implement new features and fix bugs.',
+      title: 'Research Intern',
+      company: 'Indian Institute of Technology, Kharagpur',
+      logoUrl: '/src/assets/iitkgplogo.avif',
+      date: 'Oct 2024 - Present',
+      summary: 'Conducted research on computer vision and studied the impact of synthetic data on vision models under Professor Abir Das at IIT Kharagpur.Developed and optimized AI systems to create enhanced training datasets while analyzing their effectiveness through various experiments.',
       responsibilities: [
-        'Collaborated with senior developers to design and implement web applications using modern JavaScript frameworks.',
-        'Assisted in debugging and optimizing front-end code to ensure smooth user experiences.',
-        'Participated in code reviews and contributed to improving coding standards within the team.'
-      ],
-      achievements: [
-        'Reduced page load time by 40% through optimization techniques',
-        'Implemented new feature that increased user engagement by 25%'
+        'Designed a computer vision pipeline integrating BLIP-2 vision-language model and Stable Diffusion to synthesize a 5x augmented Tiny-ImageNet dataset (650,000 images).',
+        'Optimized the dataset generation process using multi-threading, and data parallelism on a multi-GPU cluster, reducing time by 71%',
+        'Analyzed CNN architectures (ResNet-18/50) to quantify performance metrics across synthetic-to-real data ratios, demonstrating the efficacy of synthetic data in mitigating class imbalance'
       ]
     },
     {
-      title: 'Machine Learning Research Intern',
-      company: 'AI Research Lab',
-      logoUrl: 'https://picsum.photos/101/101',
-      location: 'Remote',
-      date: '2023 - 2024',
-      summary: 'Conducted research in natural language processing and computer vision, developing innovative solutions for real-world problems.',
+      title: 'Student Instructor',
+      company: 'Code in Place, Stanford University',
+      logoUrl: 'src/assets/stanford.avif',
+      date: 'April 2023 - June 2023',
+      summary: 'Served as a Teaching Assistant for Stanford\'s CS106A-based programming course, leading weekly sessions and providing instruction to students through interactive lessons and problem-solving.',
       responsibilities: [
-        'Developed and implemented machine learning models for text classification',
-        'Collaborated with research team on computer vision projects',
-        'Published research findings in technical documentation'
-      ],
-      achievements: [
-        'Successfully implemented a new NLP model with 95% accuracy',
-        'Contributed to a paper accepted at a major AI conference'
+        'Led a group of 10-15 students from around the world through a 7-week course covering Python , console programming, and graphics programming',
+        'Prepared and delivered 50-minute lessons on a weekly basis using provided lesson plans based on Stanford\'s CS106A course  and answering student questions'
       ]
     }
   ];
@@ -222,28 +214,20 @@ export const ExperienceSection = () => {
                   <div>
                     <h3 className="text-xl font-semibold text-white">{experience.title}</h3>
                     <p className="text-gray-400">{experience.company}</p>
+                    <span className="text-gray-400">{experience.date}</span>
                   </div>
                 </div>
-                <span className="text-gray-400">{experience.date}</span>
+                
               </div>
-              <p className="text-gray-400">{experience.location}</p>
-              <div className="space-y-4">
+              <div className="space-y-2">
                 <h4 className="text-white font-semibold">Summary:</h4>
                 <p className="text-gray-300">{experience.summary}</p>
               </div>
-              <div className="space-y-4">
+              <div className="space-y-2">
                 <h4 className="text-white font-semibold">Responsibilities:</h4>
                 <ul className="list-disc list-inside space-y-2 text-gray-300">
                   {experience.responsibilities.map((resp, index) => (
                     <li key={index}>{resp}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="space-y-4">
-                <h4 className="text-white font-semibold">Achievements:</h4>
-                <ul className="list-disc list-inside space-y-2 text-gray-300">
-                  {experience.achievements.map((achievement, index) => (
-                    <li key={index}>{achievement}</li>
                   ))}
                 </ul>
               </div>
@@ -258,17 +242,18 @@ export const ExperienceSection = () => {
 // Skills Section Component
 export const SkillsSection = () => {
   const skills = [
-    { icon: SiFigma },
-    { icon: SiGithub },
-    { icon: SiHtml5 },
-    { icon: SiCss3 },
-    { icon: SiJavascript },
-    { icon: SiTailwindcss },
-    { icon: SiNodedotjs },
-    { icon: SiMysql },
-    { icon: SiGit },
-    { icon: SiNextdotjs },
-    { icon: SiReact }
+      { icon: SiPandas },
+      { icon: SiPytorch },
+      { icon: SiTensorflow },
+      { icon: SiPython },
+      { icon: SiCplusplus },
+      { icon: SiPlotly },
+      { icon: SiGnubash },
+      { icon: SiAstro },
+      { icon: SiMysql },
+      { icon: SiReact },
+      { icon: SiGit },
+      { icon: SiTailwindcss }
   ];
   return (
     <motion.section
@@ -278,7 +263,7 @@ export const SkillsSection = () => {
       className="mb-20"
     >
       <SectionHeading title="Skills"/>
-      <div className="flex flex-wrap gap-4">
+      <div className="flex flex-wrap gap-3">
         {skills.map((skill, index) => (
           <SkillIcon key={index} icon={skill.icon} />
         ))}
