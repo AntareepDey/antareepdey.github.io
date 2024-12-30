@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Portfolio from '../components/Portfolio';
+import { Navbar } from '../components/Navbar';
+---
+
+<Layout title="Antareep Dey">
+  <div class="min-h-screen">
+    <Navbar client:load />
+    <Portfolio client:load />
+  </div>
+</Layout>

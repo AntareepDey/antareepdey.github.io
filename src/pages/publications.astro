@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Navbar } from '../components/Navbar';
+import { Footer } from '../components/Footer';
+import { Publication } from '../components/Publication';
+
+const publications = [
+  {
+    title: "Attention is all you need: An introduction to transformers",
+    date: "Oct 2024",
+    description: "We propose a new simple network architecture, the Transformer, based solely on attention mechanisms. Through extensive experiments, we demonstrate the effectiveness of this approach in natural language processing tasks.",
+    image: "https://picsum.photos/800/400?random=1",
+    githubUrl: "https://github.com/yourusername/transformer-paper",
+    readUrl: "https://arxiv.org/abs/1706.03762"
+  },
+  {
+    title: "Understanding Neural Networks: A Comprehensive Guide",
+    date: "Oct 2024",
+    description: "An in-depth exploration of neural network architectures and their applications. This paper provides a thorough analysis of various neural network topologies and their practical implementations.",
+    image: "https://picsum.photos/800/400?random=2",
+    readUrl: "#paper-link"
+  },
+  {
+    title: "The Future of Computer Vision",
+    date: "Oct 2024",
+    description: "Exploring the latest advancements in computer vision and their real-world applications. We discuss cutting-edge techniques and their potential impact on various industries.",
+    image: "https://picsum.photos/800/400?random=3",
+    githubUrl: "https://github.com/yourusername/cv-future",
+    readUrl: "#paper-link"
+  },
+  {
+    title: "Deep Learning in Medical Imaging",
+    date: "Sept 2024",
+    description: "A comprehensive study on applying deep learning techniques to medical image analysis, focusing on improving diagnostic accuracy and efficiency in healthcare.",
+    image: "https://picsum.photos/800/400?random=4",
+    githubUrl: "https://github.com/yourusername/medical-imaging",
+    readUrl: "#paper-link"
+  },
+  {
+    title: "Reinforcement Learning: Theory and Practice",
+    date: "Aug 2024",
+    description: "An extensive review of reinforcement learning algorithms and their practical applications in real-world scenarios, including robotics and game theory.",
+    image: "https://picsum.photos/800/400?random=5",
+    readUrl: "#paper-link"
+  },
+  {
+    title: "Natural Language Processing: State of the Art",
+    date: "July 2024",
+    description: "A detailed analysis of current trends and future directions in natural language processing, examining breakthrough technologies and their implications.",
+    image: "https://picsum.photos/800/400?random=6",
+    githubUrl: "https://github.com/yourusername/nlp-sota",
+    readUrl: "#paper-link"
+  }
+];
+---
+
+<Layout title="Publications - Antareep Dey">
+  <div class="min-h-screen">
+    <Navbar client:load />
+    
+    <main class="px-6 pt-32">
+      <div class="max-w-6xl mx-auto">
+        <div class="mb-12">
+          <h1 class="text-4xl font-bold gradient-heading mb-4">Publications</h1>
+          <p class="text-gray-400">A collection of my research work and academic publications in machine learning and artificial intelligence.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+          {publications.map((publication) => (
+            <div data-scroll>
+              <Publication 
+                client:visible
+                {...publication}
+              />
+            </div>
+          ))}
+        </div>
+
+        <Footer client:load />
+      </div>
+    </main>
+  </div>
+</Layout>
