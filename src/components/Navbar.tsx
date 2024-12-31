@@ -100,7 +100,7 @@ export const Navbar = () => {
       whileHover={{ scale: 1.02, y: -5 }}
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="fixed top-0 left-0 right-0 p-4 z-50"
+      className="fixed top-0 left-0 right-0 p-3 z-50"
     >
       <div className="max-w-3xl mx-auto px-4">
         <motion.div
@@ -116,7 +116,7 @@ export const Navbar = () => {
           >
             AD.
           </motion.a>
-          <div className="space-x-12">
+          <div className="space-x-7">
             {navItems.map((item) => (
               <motion.a
                 key={item.name}

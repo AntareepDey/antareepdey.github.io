@@ -6,7 +6,7 @@ export const Footer = () => {
   const quickLinks = [
     {
       title: 'My Resume',
-      href: '/src/assets/resume.pdf'
+      href: '/resume.pdf'
     },
     {
       title: 'Check my Schedule',

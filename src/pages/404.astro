@@ -1,31 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-const errorMessages = [
-  {main:"I'm not sure what you're looking for, but it's definitely not here",
-   sub: "Maybe try a different dimension?"
-  },
-  {main:"The page you're looking for has been abducted by aliens",
-   sub: "I'm working on getting it back (probably not)"
-  },
-  {main:"This page has gone on a permanent vacation",
-   sub: "I'm not sure where, but I'm jealous"
-  },
-  {main:"This page is on a coffee break",
-   sub: "It'll be back soon, I promise"
-  },
-  {main:"This Page Was Too Cool to Exist",
-   sub: "It transcended the internet and is now a concept in the Metaverse"
-  },
-  {main:"You've taken a wrong turn. Let's get you back on track",
-   sub: "I'm not sure where you were headed, but it wasn't here"
-  },
-  {main:"Page Ate Too Many Cookies,Now it\’s taking a nap",
-   sub: "Try waking it up with a different URL!"
-  }
-];
-
-const errorMessage = errorMessages[Math.floor(Math.random() * errorMessages.length)];
 ---
 
 
@@ -37,12 +11,8 @@ const errorMessage = errorMessages[Math.floor(Math.random() * errorMessages.leng
         404
       </h1>
       <div class="space-y-2 md:space-y-4 mb-8 md:mb-12">
-        <p class="text-lg md:text-2lg lg:text-3lg text-white/80">
-          {errorMessage.main}
-        </p>
-        <p class="text-sm text-gray-400">
-          {errorMessage.sub}
-        </p>
+        <p id="mainError" class="text-lg md:text-2lg lg:text-3lg text-white/80"></p>
+        <p id="subError" class="text-sm text-gray-400"></p>
       </div>
       <a 
         href="/" 
@@ -100,3 +70,28 @@ const errorMessage = errorMessages[Math.floor(Math.random() * errorMessages.leng
     animation-delay: 2s;
   }
 </style>
+<script>
+  const errorMessages = [
+  {main:"I'm not sure what you're looking for, but it's definitely not here",
+   sub: "Maybe try a different dimension?"
+  },
+  {main:"The page you're looking for has been abducted by aliens",
+   sub: "I'm working on getting it back (probably not)"
+  },
+  {main:"This page has gone on a permanent vacation",
+   sub: "I'm not sure where, but I'm jealous"
+  },
+  {main:"This page is on a coffee break",
+   sub: "It'll be back soon, I promise"
+  },
+  {main:"You've taken a wrong turn. Let's get you back on track",
+   sub: "I'm not sure where you were headed, but it wasn't here"
+  },
+  {main:"Page Ate Too Many Cookies,Now it\’s taking a nap",
+   sub: "Try waking it up with a different URL!"
+  }
+  ];
+  const errorMessage = errorMessages[Math.floor(Math.random() * errorMessages.length)];
+  document.getElementById('mainError').textContent = errorMessage.main;
+  document.getElementById('subError').textContent = errorMessage.sub;
+</script>

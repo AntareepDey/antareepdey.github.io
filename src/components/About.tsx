@@ -64,9 +64,11 @@ export const AboutSection = () => {
           >
             <img
               src="/9-16.avif"
-              alt="Working on laptop"
+              alt="Me wearing a suit"
               width={900}
               height={1600}
+              decoding='sync'
+              fetchPriority='high'
               className="w-full aspect-[9/16] object-cover rounded-[20px] shadow-xl transform transition-all duration-300"
             />
           </motion.div>
@@ -89,9 +91,11 @@ export const AboutSection = () => {
           >
             <img
               src="/5-4.avif"
-              alt="Portrait"
+              alt="Me at Ladakh"
               width={800}
               height={1000}
+              decoding='async'
+              fetchPriority='high'
               className="w-full aspect-[4/5] object-cover rounded-[20px] shadow-xl  transform transition-all duration-300"
             />
           </motion.div>
@@ -110,7 +114,10 @@ export const AboutSection = () => {
           >
             <img
               src="/1-1.avif"
-              alt="Another perspective"
+              alt="Me at a cafe"
+              loading='lazy'
+              decoding='async'
+              fetchPriority='auto'
               width={600}
               height={600}
               className="w-full aspect-square object-cover rounded-[20px] shadow-xl  transform transition-all duration-300"
@@ -207,6 +214,9 @@ export const ExperienceSection = () => {
                   <img
                     src={experience.logoUrl}
                     alt={`${experience.company} logo`}
+                    loading='lazy'
+                    decoding='async'
+                    fetchPriority='low'
                     width={48}
                     height={48}
                     className="w-12 h-12 rounded-full object-cover border-2 border-white/10"
@@ -263,7 +273,7 @@ export const SkillsSection = () => {
       className="mb-20"
     >
       <SectionHeading title="Skills"/>
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-wrap gap-3 justify-center">
         {skills.map((skill, index) => (
           <SkillIcon key={index} icon={skill.icon} />
         ))}

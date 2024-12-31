@@ -19,11 +19,16 @@ export const Project: React.FC<ProjectProps> = ({
   githubUrl
 }) => (
   <Card>
-    <div className="relative h-48 mb-4 rounded-lg overflow-hidden">
+    <div className="relative mb-4 rounded-lg overflow-hidden"  style={{ aspectRatio: '7/8' }}>
       <img
         src={image}
         alt={title}
+        width={700}
+        height={800}
         className="w-full h-full object-cover"
+        loading="lazy"
+        decoding='async'
+        fetchPriority='low'
       />
     </div>
     <h3 className="text-white font-semibold mb-2">{title}</h3>

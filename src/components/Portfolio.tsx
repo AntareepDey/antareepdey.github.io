@@ -12,22 +12,13 @@ const ArrowIcon = () => (
     height="24"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
-    className="ml-2 transform group-hover:translate-x-1 transition-transform"
+    className="transform group-hover:translate-x-1 transition-transform group-hover:opacity-100 opacity-70"
   >
-    <defs>
-      <linearGradient id="arrow-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#60a5fa" />
-        <stop offset="50%" stopColor="#e879f9" />
-        <stop offset="100%" stopColor="#60a5fa" />
-      </linearGradient>
-    </defs>
+    
     <path
-      d="M9 6l6 6-6 6"
-      stroke="url(#arrow-gradient)"
-      fill="none"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      d="m14.707 11.293-4-4A1 1 0 0 0 9 8v8a1 1 0 0 0 1.707.707l4-4a1 1 0 0 0 0-1.414z"
+      fill="currentColor"
+      className="transition-colors duration-300 group-hover:fill-white fill-gray-300"
     />
   </svg>
 );
@@ -56,7 +47,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({ title, href }) => (
         href={href}
         className="flex items-center group"
       >
-        <span className="bg-gradient-to-r from-blue-400 via-pink-500 to-blue-400 bg-clip-text text-transparent">
+        <span className="text-gray-400 hover:text-white opacity-70 hover:opacity-100 transition-colors duration-300">
           See all
         </span>
         <ArrowIcon />
@@ -147,7 +138,9 @@ const Portfolio = () => {
             >
               <img 
                 src="/Antareep.avif" 
-                alt="Profile" 
+                alt="Profile"
+                decoding="async"
+                fetchPriority='high'
                 width="96" 
                 height="96" 
                 className="w-full h-full object-cover" 
@@ -157,11 +150,11 @@ const Portfolio = () => {
               <h1 className="text-4xl font-bold gradient-heading mb-2">
                 Antareep Dey
               </h1>
-              <p className="text-gray-400 font-sans">Machine Learning Engineer</p>
+              <p className="text-gray-400 font-sans">Undergraduate Student</p>
             </div>
           </div>
 
-          <p className="text-gray-300 w-full max-w-3xl mb-6 leading-relaxed">
+          <p className="text-gray-300 w-full max-w-3xl mb-6 leading-relaxed font-display">
             I'm a third-year Computer Science undergrad student with a fascination for Natural Language Processing and Computer Vision. In my free time, you'll find me cheering for my F1 team, buried in books (and probably surviving on coffee), or capturing life's moments through my camera!
           </p>
           <motion.div className="flex space-x-4 mb-16">
