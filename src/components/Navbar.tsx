@@ -35,7 +35,7 @@ export const Navbar = () => {
 
   const navItems = [
     { name: 'Photography', href: '/404' },
-    { name: 'Blog', href: 'https://chaisquared.hashnode.dev/' },
+    { name: 'Blog', href: '/blog' },
     { name: 'About', href: '/about' }
   ];
 
