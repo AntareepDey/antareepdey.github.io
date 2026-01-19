@@ -1,0 +1,51 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    githubUrl: string;
+}
+
+const { title, description, githubUrl } = Astro.props;
+---
+
+<div class="project-item">
+    <span class="project-title">{title}</span>
+    <p class="project-description">{description}</p>
+    <div class="project-links">
+        <a
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mono-link"
+        >
+            GitHub↗
+        </a>
+    </div>
+</div>
+
+<style>
+    .project-item {
+        margin-bottom: 36px;
+    }
+
+    .project-title {
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 1.4;
+        margin-bottom: 8px;
+        display: block;
+        color: var(--text-primary);
+    }
+
+    .project-description {
+        font-size: 13px;
+        line-height: 1.5;
+        color: var(--text-primary);
+        margin-bottom: 10px;
+    }
+
+    .project-links {
+        display: flex;
+        gap: 16px;
+    }
+</style>

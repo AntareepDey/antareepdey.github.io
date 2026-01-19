@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import ResearchItem from "../components/ResearchItem.astro";
+import "../styles/global.css";
+
+import publications from "../data/publications.json";
+
+// Sort by date descending (newest first)
+const sortedPublications = [...publications].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+);
+
+// Helper function to make 'Antareep' bold in author names
+const boldMyName = (authors: string) => {
+    return authors.replace(/Antareep/gi, "<strong>Antareep</strong>");
+};
+---
+
+<BaseLayout title="Publications - Antareep Dey">
+    <Navbar currentPath="/publications" />
+
+    <main class="container">
+        <section>
+            <h1 class="section-heading" style="margin-top: 110px;">
+                Publications
+            </h1>
+
+            {
+                sortedPublications.map((pub) => (
+                    <ResearchItem
+                        title={pub.title}
+                        authors={boldMyName(pub.authors)}
+                        venue={pub.venue}
+                        year={pub.year}
+                        paperUrl={pub.paperUrl}
+                        codeUrl={pub.codeUrl}
+                    />
+                ))
+            }
+        </section>
+    </main>
+
+    <Footer />
+</BaseLayout>

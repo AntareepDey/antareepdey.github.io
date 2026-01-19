@@ -1,0 +1,135 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description = "Personal Website of Antareep Dey.",
+  image = "/profile.jpg",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.site)} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.site)} />
+
+    <!-- Fonts - Optimized loading to prevent FOUT/FOIT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preload critical font (Newsreader) for immediate availability -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=optional"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+      crossorigin
+    />
+
+    <!-- Load DM Mono with optional display -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=optional"
+      rel="stylesheet"
+      crossorigin
+    />
+
+    <!-- Fallback for browsers without JS -->
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap"
+        rel="stylesheet"
+        crossorigin
+      />
+    </noscript>
+
+    <!-- Prevent FOUC (Flash of Unstyled Content) for theme -->
+    <script is:inline>
+      const storedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      const theme = storedTheme || (prefersDark ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    </script>
+  </head>
+  <body>
+    <slot />
+
+    <!-- Theme & Navigation Scripts -->
+    <script is:inline>
+      // Theme Toggle
+      document.addEventListener("DOMContentLoaded", () => {
+        const themeSwitch = document.getElementById("theme-switch");
+        const html = document.documentElement;
+
+        if (themeSwitch) {
+          // Set initial state
+          const currentTheme = html.getAttribute("data-theme");
+          themeSwitch.checked = currentTheme === "dark";
+
+          themeSwitch.addEventListener("change", (e) => {
+            const isDark = e.target.checked;
+            const newTheme = isDark ? "dark" : "light";
+            html.setAttribute("data-theme", newTheme);
+            localStorage.setItem("theme", newTheme);
+          });
+        }
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById("navbar");
+        if (navbar) {
+          window.addEventListener("scroll", () => {
+            navbar.classList.toggle("scrolled", window.scrollY > 10);
+          });
+        }
+
+        // Mobile Menu Logic
+        const hamburger = document.getElementById("hamburger-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        if (hamburger && mobileMenu) {
+          hamburger.addEventListener("click", (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.toggle("active");
+          });
+
+          document.addEventListener("click", (e) => {
+            if (
+              mobileMenu.classList.contains("active") &&
+              !mobileMenu.contains(e.target)
+            ) {
+              mobileMenu.classList.remove("active");
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

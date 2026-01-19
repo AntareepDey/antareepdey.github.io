@@ -1,0 +1,13 @@
+---
+interface Props {
+    date: string;
+    content: string;
+}
+
+const { date, content } = Astro.props;
+---
+
+<li class="news-item">
+    <span class="news-date mono">{date}:</span>
+    <div class="news-content" set:html={content} />
+</li>

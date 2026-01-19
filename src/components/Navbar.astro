@@ -1,0 +1,73 @@
+---
+interface Props {
+    currentPath?: string;
+}
+
+const { currentPath = "/" } = Astro.props;
+
+const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/publications", label: "Research" },
+    { href: "/projects", label: "Projects" },
+    { href: "/blog", label: "Blog" },
+    { href: "/bookshelf", label: "Bookshelf" },
+    { href: "/gallery", label: "Gallery" },
+];
+---
+
+<nav aria-label="Main navigation" id="navbar">
+    <div class="nav-content">
+        <!-- Desktop Links -->
+        <div class="nav-links">
+            {
+                navLinks.map((link) => (
+                    <a
+                        href={link.href}
+                        class={currentPath === link.href ? "active" : ""}
+                    >
+                        {link.label}
+                    </a>
+                ))
+            }
+        </div>
+
+        <!-- Hamburger Button -->
+        <button
+            class="hamburger"
+            id="hamburger-btn"
+            aria-label="Open Menu"
+            type="button"
+        >
+            <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+
+        <!-- Mobile Popup Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            {navLinks.map((link) => <a href={link.href}>{link.label}</a>)}
+        </div>
+
+        <!-- Theme Toggle Switch -->
+        <div class="switch-container">
+            <input
+                type="checkbox"
+                id="theme-switch"
+                class="switch-input"
+                aria-label="Toggle dark mode"
+            />
+            <label for="theme-switch" class="switch-label"></label>
+        </div>
+    </div>
+</nav>

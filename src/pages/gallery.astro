@@ -1,0 +1,125 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import GalleryItem from "../components/GalleryItem.astro";
+import Lightbox from "../components/Lightbox.astro";
+import "../styles/global.css";
+
+// Import gallery images from JSON file
+import galleryImages from "../data/gallery.json";
+
+// Sort images by aspect ratio at build time for better visual grouping
+// Group similar aspect ratios together for more balanced rows
+const sortedImages = [...galleryImages].sort((a, b) => {
+    // Sort by aspect ratio descending (wide first, then tall)
+    return (b.aspectRatio || 1) - (a.aspectRatio || 1);
+});
+
+// Simple repeating pattern: 6 items per cycle
+// Row 1: 3 wide images (4 cols each = 12)
+// Row 2: 4 medium images (3 cols each = 12)
+// This ensures each row fills exactly 12 columns with no gaps
+const gridPattern = [
+    { position: 1, cols: 4 }, // Wide
+    { position: 2, cols: 4 }, // Wide
+    { position: 3, cols: 4 }, // Wide
+    { position: 4, cols: 3 }, // Medium
+    { position: 5, cols: 3 }, // Medium
+    { position: 6, cols: 3 }, // Medium
+    { position: 7, cols: 3 }, // Medium
+];
+
+// Assign grid positions to images
+const assignedImages = sortedImages.map((img, index) => {
+    const patternIndex = index % gridPattern.length;
+    return {
+        ...img,
+        gridPosition: gridPattern[patternIndex].position,
+        gridCols: gridPattern[patternIndex].cols,
+    };
+});
+---
+
+<BaseLayout title="Gallery - Antareep Dey">
+    <Navbar currentPath="/gallery" />
+
+    <main class="container">
+        <header class="gallery-header">
+            <h1 class="gallery-title">Gallery :</h1>
+            <p class="gallery-description">
+                I see the world through a lens — usually my phone's,
+                occasionally my trusty old digicam's. Most of these were shot
+                during walks, travels, or whenever something caught my eye.
+            </p>
+        </header>
+
+        <div class="gallery-grid">
+            {
+                assignedImages.map((img) => (
+                    <GalleryItem
+                        src={img.path}
+                        alt={img.alt}
+                        title={img.title}
+                        gridCols={img.gridCols}
+                        width={img.width}
+                        height={img.height}
+                    />
+                ))
+            }
+        </div>
+    </main>
+
+    <Footer />
+    <Lightbox />
+</BaseLayout>
+
+<style>
+    .gallery-header {
+        margin-top: 110px;
+        margin-bottom: 60px;
+    }
+
+    .gallery-title {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+        color: var(--text-primary);
+    }
+
+    .gallery-description {
+        font-size: 15px;
+        line-height: 1.5;
+        color: var(--text-primary);
+        max-width: 98%;
+    }
+
+    .gallery-description :global(a) {
+        color: var(--link-highlight-color);
+        font-weight: 500;
+        transition: opacity 0.2s;
+    }
+
+    .gallery-description :global(a:hover) {
+        opacity: 0.8;
+        text-decoration: underline;
+    }
+
+    /* The Grid */
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-auto-flow: dense;
+        gap: 12px;
+        width: 100%;
+    }
+
+    @media (max-width: 768px) {
+        .gallery-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+    }
+</style>

@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import MiscCard from "../components/MiscCard.astro";
+import "../styles/global.css";
+
+import miscData from "../data/misc.json";
+---
+
+<BaseLayout title="Misc - Antareep Dey">
+    <Navbar currentPath="/misc" />
+
+    <main class="container">
+        <header class="misc-header">
+            <h1 class="misc-title">Misc :</h1>
+            <p class="misc-description">
+                A personal collection of interesting finds — articles, videos,
+                tools, places, and anything else worth sharing.
+            </p>
+        </header>
+
+        <div class="misc-grid">
+            {
+                miscData.map((category) => (
+                    <MiscCard
+                        category={category.category}
+                        items={category.items}
+                        size={category.size as "large" | "medium" | "small"}
+                    />
+                ))
+            }
+        </div>
+    </main>
+
+    <Footer />
+</BaseLayout>

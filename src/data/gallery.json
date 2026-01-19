@@ -1,0 +1,587 @@
+[
+    {
+        "id": 1,
+        "title": "About to rain",
+        "alt": "About to rain",
+        "path": "/gallery/About to rain.avif",
+        "width": 3943,
+        "height": 3154,
+        "aspectRatio": 1.25
+    },
+    {
+        "id": 2,
+        "title": "After the rain",
+        "alt": "After the rain",
+        "path": "/gallery/After the rain.avif",
+        "width": 3292,
+        "height": 3472,
+        "aspectRatio": 0.948
+    },
+    {
+        "id": 3,
+        "title": "Autumn Leaves",
+        "alt": "Autumn Leaves",
+        "path": "/gallery/Autumn Leaves.avif",
+        "width": 4625,
+        "height": 3461,
+        "aspectRatio": 1.336
+    },
+    {
+        "id": 4,
+        "title": "Basketball Court",
+        "alt": "Basketball Court",
+        "path": "/gallery/Basketball Court.avif",
+        "width": 3098,
+        "height": 4141,
+        "aspectRatio": 0.748
+    },
+    {
+        "id": 5,
+        "title": "Big Dipper",
+        "alt": "Big Dipper",
+        "path": "/gallery/Big Dipper.avif",
+        "width": 2289,
+        "height": 2863,
+        "aspectRatio": 0.8
+    },
+    {
+        "id": 6,
+        "title": "Building Block",
+        "alt": "Building Block",
+        "path": "/gallery/Building Block.avif",
+        "width": 5786,
+        "height": 7232,
+        "aspectRatio": 0.8
+    },
+    {
+        "id": 7,
+        "title": "Calm Evening",
+        "alt": "Calm Evening",
+        "path": "/gallery/Calm Evening.avif",
+        "width": 3456,
+        "height": 4608,
+        "aspectRatio": 0.75
+    },
+    {
+        "id": 8,
+        "title": "Chail Palace",
+        "alt": "Chail Palace",
+        "path": "/gallery/Chail Palace.avif",
+        "width": 6255,
+        "height": 7818,
+        "aspectRatio": 0.8
+    },
+    {
+        "id": 9,
+        "title": "Cold Desert",
+        "alt": "Cold Desert",
+        "path": "/gallery/Cold Desert.avif",
+        "width": 3472,
+        "height": 4341,
+        "aspectRatio": 0.8
+    },
+    {
+        "id": 10,
+        "title": "Daisy",
+        "alt": "Daisy",
+        "path": "/gallery/Daisy.avif",
+        "width": 3825,
+        "height": 4782,
+        "aspectRatio": 0.8
+    },
+    {
+        "id": 11,
+        "title": "Decor",
+        "alt": "Decor",
+        "path": "/gallery/Decor.avif",
+        "width": 6944,
+        "height": 9280,
+        "aspectRatio": 0.748
+    },
+    {
+        "id": 12,
+        "title": "Diya",
+        "alt": "Diya",
+        "path": "/gallery/Diya.avif",
+        "width": 2705,
+        "height": 3381,
+        "aspectRatio": 0.8
+    },
+    {
+        "id": 13,
+        "title": "Evening",
+        "alt": "Evening",
+        "path": "/gallery/Evening.avif",
+        "width": 3249,
+        "height": 4205,
+        "aspectRatio": 0.773
+    },
+    {
+        "id": 14,
+        "title": "Evening in the hills",
+        "alt": "Evening in the hills",
+        "path": "/gallery/Evening in the hills.avif",
+        "width": 6944,
+        "height": 8680,
+        "aspectRatio": 0.8
+    },
+    {
+        "id": 15,
+        "title": "Fall",
+        "alt": "Fall",
+        "path": "/gallery/Fall.avif",
+        "width": 5732,
+        "height": 7158,
+        "aspectRatio": 0.801
+    },
+    {
+        "id": 16,
+        "title": "Ferris Wheel",
+        "alt": "Ferris Wheel",
+        "path": "/gallery/Ferris Wheel.avif",
+        "width": 6116,
+        "height": 7645,
+        "aspectRatio": 0.8
+    },
+    {
+        "id": 17,
+        "title": "Fisherman",
+        "alt": "Fisherman",
+        "path": "/gallery/Fisherman.avif",
+        "width": 1145,
+        "height": 486,
+        "aspectRatio": 2.356
+    },
+    {
+        "id": 18,
+        "title": "Himalayas",
+        "alt": "Himalayas",
+        "path": "/gallery/Himalayas.avif",
+        "width": 4912,
+        "height": 6141,
+        "aspectRatio": 0.8
+    },
+    {
+        "id": 19,
+        "title": "Hostel Room",
+        "alt": "Hostel Room",
+        "path": "/gallery/Hostel Room.avif",
+        "width": 3113,
+        "height": 4038,
+        "aspectRatio": 0.771
+    },
+    {
+        "id": 20,
+        "title": "IIT Kharagpur",
+        "alt": "IIT Kharagpur",
+        "path": "/gallery/IIT Kharagpur.avif",
+        "width": 5469,
+        "height": 8205,
+        "aspectRatio": 0.667
+    },
+    {
+        "id": 21,
+        "title": "Infinity",
+        "alt": "Infinity",
+        "path": "/gallery/Infinity.avif",
+        "width": 6387,
+        "height": 7984,
+        "aspectRatio": 0.8
+    },
+    {
+        "id": 22,
+        "title": "Kolkata",
+        "alt": "Kolkata",
+        "path": "/gallery/Kolkata.avif",
+        "width": 4086,
+        "height": 3471,
+        "aspectRatio": 1.177
+    },
+    {
+        "id": 23,
+        "title": "Lake",
+        "alt": "Lake",
+        "path": "/gallery/Lake.avif",
+        "width": 3116,
+        "height": 3472,
+        "aspectRatio": 0.897
+    },
+    {
+        "id": 24,
+        "title": "Lantana",
+        "alt": "Lantana",
+        "path": "/gallery/Lantana.avif",
+        "width": 2911,
+        "height": 4062,
+        "aspectRatio": 0.717
+    },
+    {
+        "id": 25,
+        "title": "Lazy Summer Afternoon",
+        "alt": "Lazy Summer Afternoon",
+        "path": "/gallery/Lazy Summer Afternoon.avif",
+        "width": 3456,
+        "height": 4624,
+        "aspectRatio": 0.747
+    },
+    {
+        "id": 26,
+        "title": "Lohri",
+        "alt": "Lohri",
+        "path": "/gallery/Lohri.avif",
+        "width": 3521,
+        "height": 3472,
+        "aspectRatio": 1.014
+    },
+    {
+        "id": 27,
+        "title": "Looking over Ladakh",
+        "alt": "Looking over Ladakh",
+        "path": "/gallery/Looking over Ladakh.avif",
+        "width": 3364,
+        "height": 4205,
+        "aspectRatio": 0.8
+    },
+    {
+        "id": 28,
+        "title": "Lotus",
+        "alt": "Lotus",
+        "path": "/gallery/Lotus.avif",
+        "width": 3472,
+        "height": 4640,
+        "aspectRatio": 0.748
+    },
+    {
+        "id": 29,
+        "title": "Mall road (Shimla)",
+        "alt": "Mall road (Shimla)",
+        "path": "/gallery/Mall road (Shimla).avif",
+        "width": 6613,
+        "height": 8266,
+        "aspectRatio": 0.8
+    },
+    {
+        "id": 30,
+        "title": "Meow",
+        "alt": "Meow",
+        "path": "/gallery/Meow.avif",
+        "width": 2291,
+        "height": 2863,
+        "aspectRatio": 0.8
+    },
+    {
+        "id": 31,
+        "title": "Messy Bed",
+        "alt": "Messy Bed",
+        "path": "/gallery/Messy Bed.avif",
+        "width": 3386,
+        "height": 4234,
+        "aspectRatio": 0.8
+    },
+    {
+        "id": 32,
+        "title": "Migration",
+        "alt": "Migration",
+        "path": "/gallery/Migration.avif",
+        "width": 2560,
+        "height": 1920,
+        "aspectRatio": 1.333
+    },
+    {
+        "id": 33,
+        "title": "Monastry",
+        "alt": "Monastry",
+        "path": "/gallery/Monastry.avif",
+        "width": 6944,
+        "height": 9280,
+        "aspectRatio": 0.748
+    },
+    {
+        "id": 34,
+        "title": "Moonlight",
+        "alt": "Moonlight",
+        "path": "/gallery/Moonlight.avif",
+        "width": 4157,
+        "height": 5196,
+        "aspectRatio": 0.8
+    },
+    {
+        "id": 35,
+        "title": "My Desk",
+        "alt": "My Desk",
+        "path": "/gallery/My Desk.avif",
+        "width": 6517,
+        "height": 8146,
+        "aspectRatio": 0.8
+    },
+    {
+        "id": 36,
+        "title": "Night changes",
+        "alt": "Night changes",
+        "path": "/gallery/Night changes.avif",
+        "width": 2239,
+        "height": 3134,
+        "aspectRatio": 0.714
+    },
+    {
+        "id": 37,
+        "title": "Prayer",
+        "alt": "Prayer",
+        "path": "/gallery/Prayer.avif",
+        "width": 5724,
+        "height": 8014,
+        "aspectRatio": 0.714
+    },
+    {
+        "id": 38,
+        "title": "Prayers",
+        "alt": "Prayers",
+        "path": "/gallery/Prayers.avif",
+        "width": 5863,
+        "height": 7329,
+        "aspectRatio": 0.8
+    },
+    {
+        "id": 39,
+        "title": "Purple Heart",
+        "alt": "Purple Heart",
+        "path": "/gallery/Purple Heart.avif",
+        "width": 1720,
+        "height": 2366,
+        "aspectRatio": 0.727
+    },
+    {
+        "id": 40,
+        "title": "Purulia",
+        "alt": "Purulia",
+        "path": "/gallery/Purulia.avif",
+        "width": 9280,
+        "height": 6944,
+        "aspectRatio": 1.336
+    },
+    {
+        "id": 41,
+        "title": "Rabindra Setu",
+        "alt": "Rabindra Setu",
+        "path": "/gallery/Rabindra Setu.avif",
+        "width": 3472,
+        "height": 4640,
+        "aspectRatio": 0.748
+    },
+    {
+        "id": 42,
+        "title": "Rain Drops",
+        "alt": "Rain Drops",
+        "path": "/gallery/Rain Drops.avif",
+        "width": 1200,
+        "height": 1600,
+        "aspectRatio": 0.75
+    },
+    {
+        "id": 43,
+        "title": "Rajbari",
+        "alt": "Rajbari",
+        "path": "/gallery/Rajbari.avif",
+        "width": 5837,
+        "height": 7296,
+        "aspectRatio": 0.8
+    },
+    {
+        "id": 44,
+        "title": "Rashtrapati Bhavan",
+        "alt": "Rashtrapati Bhavan",
+        "path": "/gallery/Rashtrapati Bhavan.avif",
+        "width": 6944,
+        "height": 9280,
+        "aspectRatio": 0.748
+    },
+    {
+        "id": 45,
+        "title": "Red",
+        "alt": "Red",
+        "path": "/gallery/Red.avif",
+        "width": 2592,
+        "height": 1944,
+        "aspectRatio": 1.333
+    },
+    {
+        "id": 46,
+        "title": "River",
+        "alt": "River",
+        "path": "/gallery/River.avif",
+        "width": 6931,
+        "height": 5558,
+        "aspectRatio": 1.247
+    },
+    {
+        "id": 47,
+        "title": "Shimla",
+        "alt": "Shimla",
+        "path": "/gallery/Shimla.avif",
+        "width": 6205,
+        "height": 7755,
+        "aspectRatio": 0.8
+    },
+    {
+        "id": 48,
+        "title": "Siesta",
+        "alt": "Siesta",
+        "path": "/gallery/Siesta.avif",
+        "width": 6944,
+        "height": 8680,
+        "aspectRatio": 0.8
+    },
+    {
+        "id": 49,
+        "title": "Spotlight",
+        "alt": "Spotlight",
+        "path": "/gallery/Spotlight.avif",
+        "width": 8734,
+        "height": 6437,
+        "aspectRatio": 1.357
+    },
+    {
+        "id": 50,
+        "title": "Spring",
+        "alt": "Spring",
+        "path": "/gallery/Spring.avif",
+        "width": 3472,
+        "height": 3472,
+        "aspectRatio": 1
+    },
+    {
+        "id": 51,
+        "title": "Stand and Stare",
+        "alt": "Stand and Stare",
+        "path": "/gallery/Stand and Stare.avif",
+        "width": 9280,
+        "height": 6944,
+        "aspectRatio": 1.336
+    },
+    {
+        "id": 52,
+        "title": "Star Trails",
+        "alt": "Star Trails",
+        "path": "/gallery/Star Trails.avif",
+        "width": 2872,
+        "height": 3545,
+        "aspectRatio": 0.81
+    },
+    {
+        "id": 53,
+        "title": "Starry Night",
+        "alt": "Starry Night",
+        "path": "/gallery/Starry Night.avif",
+        "width": 3811,
+        "height": 2934,
+        "aspectRatio": 1.299
+    },
+    {
+        "id": 54,
+        "title": "Sunset",
+        "alt": "Sunset",
+        "path": "/gallery/Sunset.avif",
+        "width": 3051,
+        "height": 4608,
+        "aspectRatio": 0.662
+    },
+    {
+        "id": 55,
+        "title": "Thinking",
+        "alt": "Thinking",
+        "path": "/gallery/Thinking.avif",
+        "width": 3968,
+        "height": 2976,
+        "aspectRatio": 1.333
+    },
+    {
+        "id": 56,
+        "title": "Those eyes",
+        "alt": "Those eyes",
+        "path": "/gallery/Those eyes.avif",
+        "width": 4491,
+        "height": 5614,
+        "aspectRatio": 0.8
+    },
+    {
+        "id": 57,
+        "title": "Till the sun sets",
+        "alt": "Till the sun sets",
+        "path": "/gallery/Till the sun sets.avif",
+        "width": 3267,
+        "height": 4085,
+        "aspectRatio": 0.8
+    },
+    {
+        "id": 58,
+        "title": "Train to Kalka",
+        "alt": "Train to Kalka",
+        "path": "/gallery/Train to Kalka.avif",
+        "width": 5842,
+        "height": 7807,
+        "aspectRatio": 0.748
+    },
+    {
+        "id": 59,
+        "title": "Universe",
+        "alt": "Universe",
+        "path": "/gallery/Universe.avif",
+        "width": 3456,
+        "height": 4624,
+        "aspectRatio": 0.747
+    },
+    {
+        "id": 60,
+        "title": "Viceregal Lodge",
+        "alt": "Viceregal Lodge",
+        "path": "/gallery/Viceregal Lodge.avif",
+        "width": 6721,
+        "height": 8401,
+        "aspectRatio": 0.8
+    },
+    {
+        "id": 61,
+        "title": "Warmth",
+        "alt": "Warmth",
+        "path": "/gallery/Warmth.avif",
+        "width": 6944,
+        "height": 8680,
+        "aspectRatio": 0.8
+    },
+    {
+        "id": 62,
+        "title": "Watching",
+        "alt": "Watching",
+        "path": "/gallery/Watching.avif",
+        "width": 3472,
+        "height": 4640,
+        "aspectRatio": 0.748
+    },
+    {
+        "id": 63,
+        "title": "Water Droplet",
+        "alt": "Water Droplet",
+        "path": "/gallery/Water Droplet.avif",
+        "width": 899,
+        "height": 1504,
+        "aspectRatio": 0.598
+    },
+    {
+        "id": 64,
+        "title": "Waterfall",
+        "alt": "Waterfall",
+        "path": "/gallery/Waterfall.avif",
+        "width": 6702,
+        "height": 8377,
+        "aspectRatio": 0.8
+    },
+    {
+        "id": 65,
+        "title": "Winter Mornings",
+        "alt": "Winter Mornings",
+        "path": "/gallery/Winter Mornings.avif",
+        "width": 5173,
+        "height": 9197,
+        "aspectRatio": 0.562
+    }
+]

@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "title": "See-curity",
+        "description": "A system that records surveillance footage based on the presence of human activity.",
+        "githubUrl": "https://github.com/AntareepDey/Survellience-Footage-Optimization",
+        "date": "2024-01-01"
+    },
+    {
+        "id": 2,
+        "title": "Signal Compression",
+        "description": "Paper Implementation: Hybrid Compression Method for PQD Signals in Active Distribution Networks",
+        "githubUrl": "https://github.com/AntareepDey/PQD-SignalCompression",
+        "date": "2024-01-01"
+    },
+    {
+        "id": 3,
+        "title": "SeeFood",
+        "description": "The Shazam for Food (Well kinda!). Check if your food is a hotdog or not.",
+        "githubUrl": "https://github.com/AntareepDey/SeeFood",
+        "date": "2024-01-01"
+    },
+    {
+        "id": 4,
+        "title": "SymptoCareAI",
+        "description": "A project that harnesses the power of LLM's to provide safe medical advice.",
+        "githubUrl": "https://github.com/AntareepDey/SymptoCareAI",
+        "date": "2023-01-01"
+    },
+    {
+        "id": 5,
+        "title": "Prolog Calc",
+        "description": "A calculator application written in Prolog.",
+        "githubUrl": "https://github.com/AntareepDey/Prolog_calc",
+        "date": "2023-01-01"
+    },
+    {
+        "id": 6,
+        "title": "Marketing Management System",
+        "description": "A flask based web app that helps in marketing and sales management",
+        "githubUrl": "https://github.com/AntareepDey/Marketing-management-sytem",
+        "date": "2022-01-01"
+    },
+    {
+        "id": 7,
+        "title": "PyPad",
+        "description": "A notepad clone written in Python using tkinter (cuz why not!)",
+        "githubUrl": "https://github.com/AntareepDey/PyPad",
+        "date": "2021-09-19"
+    },
+    {
+        "id": 8,
+        "title": "Hangman",
+        "description": "A fun hangman game written in Python using Tkinter.",
+        "githubUrl": "https://github.com/AntareepDey/hangmanproject",
+        "date": "2020-06-19"
+    },
+    {
+        "id": 9,
+        "title": "CineGAN",
+        "description": "Give your Images a Old School Film Look using GAN's",
+        "githubUrl": "https://github.com/AntareepDey/CineGAN",
+        "date": "2024-06-18"
+    }
+]

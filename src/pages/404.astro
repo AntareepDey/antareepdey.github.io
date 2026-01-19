@@ -1,0 +1,104 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+// Array of funny 404 messages
+const messages = [
+    "This page went on vacation and forgot to leave a forwarding address.",
+    "404: Page not found. It's probably hiding with your missing socks.",
+    "Oops! This page is playing hide and seek... and winning.",
+    "Error 404: This page has been abducted by aliens. We're negotiating its return.",
+    "This page is taking a mental health day. Please respect its boundaries.",
+    "404: Like my motivation, this page cannot be found.",
+    "This page joined a witness protection program. We can't reveal its location.",
+    "Schrödinger's page: It both exists and doesn't exist until you observe it.",
+    "This page is in another castle. Thanks, Mario.",
+    "404: This page ghosted us. No explanation, just gone.",
+    "Error: Page.exe has stopped working. Have you tried turning it off and on again?",
+    "This page is on a coffee break. It's been 3 years.",
+    "404: This page is busy contemplating the meaning of existence.",
+    "Congratulations! You found the secret 'nothing' page. There's nothing here.",
+    "This page got lost in the Bermuda Triangle of the internet.",
+];
+
+// Select a random message (will change on each page load/refresh)
+const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+---
+
+<BaseLayout
+    title="404 - Page Not Found"
+    description="The page you're looking for doesn't exist."
+>
+    <Navbar />
+
+    <main class="error-container">
+        <div class="error-content">
+            <h1 class="error-code">404</h1>
+            <p class="error-message">{randomMessage}</p>
+            <a href="/" class="home-link mono"> ← Back to Home </a>
+        </div>
+    </main>
+
+    <Footer />
+</BaseLayout>
+
+<style>
+    .error-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: calc(100vh - var(--nav-height));
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+    .error-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 40px 24px;
+    }
+
+    .error-code {
+        font-size: 120px;
+        font-weight: 600;
+        line-height: 1;
+        margin-bottom: 24px;
+        color: var(--text-primary);
+        letter-spacing: -0.02em;
+    }
+
+    .error-message {
+        font-size: 18px;
+        line-height: 1.5;
+        color: var(--text-primary);
+        max-width: 600px;
+        margin-bottom: 40px;
+    }
+
+    .home-link {
+        font-size: 14px;
+        color: var(--text-primary);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        transition: opacity 0.2s ease;
+    }
+
+    .home-link:hover {
+        opacity: 0.7;
+    }
+
+    @media (max-width: 768px) {
+        .error-code {
+            font-size: 80px;
+        }
+
+        .error-message {
+            font-size: 16px;
+            padding: 0 20px;
+        }
+    }
+</style>

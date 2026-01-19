@@ -1,0 +1,45 @@
+---
+interface Props {
+    title: string;
+    authors: string;
+    venue: string;
+    year: number;
+    paperUrl?: string;
+    codeUrl?: string;
+}
+
+const { title, authors, venue, year, paperUrl, codeUrl } = Astro.props;
+---
+
+<div class="research-item">
+    <span class="research-title">{title}</span>
+    <div class="research-meta mono">
+        <span set:html={authors} /> - <strong>{venue}, {year}</strong>
+    </div>
+    <div class="research-links">
+        {
+            paperUrl && paperUrl !== "#" && (
+                <a
+                    href={paperUrl}
+                    class="mono-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Paper↗
+                </a>
+            )
+        }
+        {
+            codeUrl && codeUrl !== "#" && (
+                <a
+                    href={codeUrl}
+                    class="mono-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Code↗
+                </a>
+            )
+        }
+    </div>
+</div>

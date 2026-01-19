@@ -1,0 +1,119 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import SocialLinks from "../components/SocialLinks.astro";
+import ResearchItem from "../components/ResearchItem.astro";
+import NewsItem from "../components/NewsItem.astro";
+import "../styles/global.css";
+
+import publications from "../data/publications.json";
+import news from "../data/news.json";
+
+// Sort by date descending and get top items
+const sortedPublications = [...publications].sort(
+	(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+);
+const recentPublications = sortedPublications.slice(0, 3);
+
+const sortedNews = [...news].sort(
+	(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+);
+const recentNews = sortedNews.slice(0, 5);
+---
+
+<BaseLayout title="Antareep Dey - Undergraduate Researcher">
+	<Navbar currentPath="/" />
+
+	<main class="container">
+		<!-- Hero Section -->
+		<section class="hero" id="hero">
+			<img
+				src="/profile.avif"
+				alt="Antareep Dey profile photo"
+				class="profile-img"
+				width="140"
+				height="140"
+				loading="eager"
+				decoding="async"
+				fetchpriority="high"
+			/>
+
+			<div class="hero-content">
+				<h1 class="hero-title">Antareep Dey</h1>
+				<p class="tagline">/un·tuh·rip dey/</p>
+				<span class="role mono">Undergrad Student</span>
+
+				<SocialLinks />
+			</div>
+		</section>
+
+		<!-- About Section -->
+		<section id="about">
+			<h2 class="section-heading">About Me :</h2>
+			<div class="about-text">
+				<p>
+					I'm a final year Computer Science undergraduate at <a href="https://vitbhopal.ac.in/" class="link-highlight">Vellore Institute of Technology, Bhopal</a>, currently working as a Research Intern at 
+					<a href="https://www.iitkgp.ac.in/" class="link-highlight">IIT Kharagpur</a> under the guidance of <a href="https://cse.iitkgp.ac.in/~adas/" class="link-highlight">Dr. Abir Das</a>. My research interests live at
+					the intersection of computer vision and natural language
+					processing. Specifically, I'm drawn to understanding <em> why</em>
+					models work (or don't), not just <em>that</em> they work. Right now,
+					I'm exploring test-time adaptation strategies for video domain
+					adaptation and investigating how synthetic data shapes
+					feature learning in neural networks, with a focus on model
+					generalisation, explainability, and robustness under
+					distribution shift. I've also worked on explainable AI
+					for medical imaging, small language models, and
+					edge-deployed vision systems.
+				</p>
+				<p>
+					Beyond the lab, you'll find me obsessing over <a href="https://www.mercedesamgf1.com/" class="link-highlight">Formula 1</a> 🏎️ ,marvelling at architecture 🏛️ or feeding my inner <a href="/gallery" class="link-highlight">shutterbug</a>📸. I firmly believe the best
+					ideas come from conversations—preferably caffeinated ones ☕.
+					If you're interested in my research ( and even if you aren't ) <a href="mailto:antareep2018@gmail.com" class="link-highlight">let's connect!</a> 💬
+				</p>
+				<p>
+					📢 <b>Currently looking for graduate opportunities.</b>
+				</p>
+			</div>
+		</section>
+
+		<!-- Recent Research -->
+		<section id="research">
+			<h2 class="section-heading">Recent Research</h2>
+
+			{
+				recentPublications.map((pub) => (
+					<ResearchItem
+						title={pub.title}
+						authors={pub.authors}
+						venue={pub.venue}
+						year={pub.year}
+						paperUrl={pub.paperUrl}
+						codeUrl={pub.codeUrl}
+					/>
+				))
+			}
+
+			<a href="/publications" class="view-all mono">View All →</a>
+		</section>
+
+		<!-- News -->
+		<section id="news">
+			<h2 class="section-heading">News</h2>
+			<ul class="news-list">
+				{
+					recentNews.map((item) => (
+						<NewsItem
+							date={item.displayDate}
+							content={item.content}
+						/>
+					))
+				}
+			</ul>
+
+			<a href="/news" class="view-all mono">View All→</a>
+		</section>
+	</main>
+
+	<Footer />
+</BaseLayout>

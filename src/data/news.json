@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "date": "2022-10-30",
+        "displayDate": "30/10/2022",
+        "content": "Started my Bachelor's degree at <em>Vellore Institute of Technology, Bhopal</em>."
+    },
+    {
+        "id": 2,
+        "date": "2023-04-18",
+        "displayDate": "18/4/2023",
+        "content": "Selected as a <em>Section Leader</em> for <a href=\"https://codeinplace.stanford.edu/\">Stanford Code in Place</a>."
+    },
+    {
+        "id": 3,
+        "date": "2023-07-31",
+        "displayDate": "31/7/2023",
+        "content": "Became the <em>Design Lead</em> for the university <a href=\"https://androidclubvitbpl.web.app/\">Android Club</a>."
+    },
+    {
+        "id": 4,
+        "date": "2023-10-19",
+        "displayDate": "19/10/2023",
+        "content": "Released my first large scale dataset <a href=\"https://huggingface.co/datasets/antareepdey/Patient_doctor_chat\">Patient_Doctor_Chat</a> on Hugging Face."
+    },
+    {
+        "id": 5,
+        "date": "2024-06-06",
+        "displayDate": "6/6/2024",
+        "content": "Promoted to <em>Operations Lead</em> for the university <a href=\"https://androidclubvitbpl.web.app/\">Android Club</a>."
+    },
+    {
+        "id": 6,
+        "date": "2024-10-29",
+        "displayDate": "29/10/2024",
+        "content": "Joined the <a href=\"https://cvir.github.io/\">CVIR Group</a> as an Undergraduate Research Intern at <a href=\"https://www.iitkgp.ac.in/\">IIT Kharagpur</a> under the guidance of <em>Dr. Abir Das</em>."
+    },
+    {
+        "id": 7,
+        "date": "2025-05-27",
+        "displayDate": "27/5/2025",
+        "content": "Our paper was accepted for <em>oral presentation</em> at <a href=\"https://www.icaiet.co.in/\">ICAIET 2025</a>."
+    },
+    {
+        "id": 8,
+        "date": "2025-08-31",
+        "displayDate": "31/8/2025",
+        "content": "Presented our paper at <em>ICAIET 2025</em> Bhubaneswar."
+    },
+    {
+        "id": 9,
+        "date": "2025-12-30",
+        "displayDate": "30/12/2025",
+        "content": "<a href=\"https://huggingface.co/datasets/antareepdey/Patient_doctor_chat\">Patient_Doctor_Chat</a> crosses <em>1500 lifetime downloads</em> on Hugging Face."
+    }
+]

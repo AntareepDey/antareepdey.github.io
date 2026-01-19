@@ -1,0 +1,67 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import BookshelfTabs from "../components/BookshelfTabs";
+import "../styles/global.css";
+
+import books from "../data/books.json";
+---
+
+<BaseLayout title="Bookshelf - Antareep Dey">
+    <Navbar currentPath="/bookshelf" />
+
+    <main class="container">
+        <!-- Intro Section -->
+        <section class="bookshelf-intro">
+            <h1>Bookshelf:</h1>
+            <p>
+                I'm an avid reader with a weakness for mystery, crime, and
+                thriller novels, with occasional detours into historical
+                fiction.
+            </p>
+        </section>
+
+        <!-- Bookshelf Tabs (React Component) -->
+        <BookshelfTabs books={books} client:load />
+    </main>
+
+    <Footer />
+</BaseLayout>
+
+<style>
+    .bookshelf-intro {
+        margin-top: 110px;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .bookshelf-intro h1 {
+        font-family: "Newsreader", serif;
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 10px;
+    }
+
+    .bookshelf-intro p {
+        font-size: 15px;
+        line-height: 1.5;
+        color: var(--text-primary);
+        max-width: 90%;
+    }
+
+    .bookshelf-intro p :global(strong) {
+        font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+        .bookshelf-intro {
+            margin-top: 80px;
+        }
+
+        .bookshelf-intro h1 {
+            font-size: 28px;
+        }
+    }
+</style>
