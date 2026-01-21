@@ -8,7 +8,7 @@ import "../styles/global.css";
 import books from "../data/books.json";
 ---
 
-<BaseLayout title="Bookshelf - Antareep Dey">
+<BaseLayout title="Antareep Dey">
     <Navbar currentPath="/bookshelf" />
 
     <main class="container">
@@ -23,7 +23,7 @@ import books from "../data/books.json";
         </section>
 
         <!-- Bookshelf Tabs (React Component) -->
-        <BookshelfTabs books={books} client:load />
+        <BookshelfTabs books={books} client:idle />
     </main>
 
     <Footer />

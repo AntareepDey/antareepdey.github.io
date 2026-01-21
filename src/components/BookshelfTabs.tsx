@@ -13,9 +13,9 @@ interface BookshelfTabsProps {
 }
 
 const tabs = [
-    { id: 'want_to_read', label: 'Want to Read' },
-    { id: 'reading', label: 'Reading' },
     { id: 'read', label: 'Read' },
+    { id: 'reading', label: 'Reading' },
+    { id: 'want_to_read', label: 'Want to Read' },
 ];
 
 // CSS styles for the bookshelf component
@@ -85,7 +85,7 @@ const styles = `
 /* Book Grid */
 .bs-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 32px;
     width: 100%;
 }
@@ -146,21 +146,21 @@ const styles = `
 /* Responsive styles */
 @media (max-width: 1024px) {
     .bs-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 24px;
     }
 }
 
 @media (max-width: 768px) {
     .bs-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 20px;
     }
 }
 
 @media (max-width: 480px) {
     .bs-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 16px;
     }
 

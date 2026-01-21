@@ -1,82 +1,158 @@
 [
-    {
-        "category": "Articles & Blogs",
-        "size": "large",
-        "items": [
-            {
-                "title": "Placeholder Article 1",
-                "url": "#"
-            },
-            {
-                "title": "Placeholder Article 2",
-                "url": "#"
-            },
-            {
-                "title": "Placeholder Article 3",
-                "url": "#"
-            },
-            {
-                "title": "Placeholder Article 4",
-                "url": "#"
-            }
-        ]
-    },
-    {
-        "category": "Tools",
-        "size": "medium",
-        "items": [
-            {
-                "title": "Placeholder Tool 1",
-                "url": "#"
-            },
-            {
-                "title": "Placeholder Tool 2",
-                "url": "#"
-            }
-        ]
-    },
-    {
-        "category": "Videos",
-        "size": "medium",
-        "items": [
-            {
-                "title": "Placeholder Video 1",
-                "url": "#"
-            },
-            {
-                "title": "Placeholder Video 2",
-                "url": "#"
-            },
-            {
-                "title": "Placeholder Video 3",
-                "url": "#"
-            }
-        ]
-    },
-    {
-        "category": "Places",
-        "size": "large",
-        "items": [
-            {
-                "title": "Placeholder Restaurant 1",
-                "url": "#"
-            },
-            {
-                "title": "Placeholder Landmark 1",
-                "url": "#"
-            },
-            {
-                "title": "Placeholder Cafe 1",
-                "url": "#"
-            },
-            {
-                "title": "Placeholder Spot 1",
-                "url": "#"
-            },
-            {
-                "title": "Placeholder Location 1",
-                "url": "#"
-            }
-        ]
-    }
+  {
+    "category": "Articles & Papers",
+    "size": "large",
+    "items": [
+      {
+        "title": "Machines of Loving Grace",
+        "url": "https://www.darioamodei.com/essay/machines-of-loving-grace"
+      },
+      {
+        "title": "On the biology of a large language model",
+        "url": "https://transformer-circuits.pub/2025/attribution-graphs/biology.html"
+      },
+      {
+        "title": "List of movies everyone should watch at least once",
+        "url": "https://letterboxd.com/fcbarcelona/list/movies-everyone-should-watch-at-least-once/"
+      },
+      {
+        "title": "List of Beautiful CS papers",
+        "url": "https://docs.google.com/document/d/1wobQZ9dU9qtHF3OlOXdRX7kpirk7-ZE7xdM_fOC8FbA/edit?tab=t.0#heading=h.nzecopmx9zyg"
+      },
+      {
+        "title": "Articles on Recommendation Systems",
+        "url": "https://vinija.ai/recsys/papers/"
+      },
+      {
+        "title": "MIT's Undergraduate Research Journal",
+        "url": "https://murj.mit.edu/"
+      }
+    ]
+  },
+  {
+    "category": "ML Resources",
+    "size": "medium",
+    "items": [
+      {
+        "title": "CS Statements of Purpose",
+        "url": "https://cs-sop.notion.site/CS-PhD-Statements-of-Purpose-df39955313834889b7ac5411c37b958d"
+      },
+      {
+        "title": "Stanford CS224N: Natural Language Processing with Deep Learning",
+        "url": "https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1244/"
+      },
+      {
+        "title": "Cohere Labs Research Resources",
+        "url": "https://sites.google.com/cohere.com/coherelabs-community/get-started/research-resources?authuser=0"
+      },
+      {
+        "title": "Google Dataset Search",
+        "url": "https://datasetsearch.research.google.com/"
+      }
+    ]
+  },
+  {
+    "category": "Tools & Platforms",
+    "size": "large",
+    "items": [
+      {
+        "title": "Bolt.new",
+        "url": "https://bolt.new/"
+      },
+      {
+        "title": "Modal",
+        "url": "https://modal.com/"
+      },
+      {
+        "title": "Consensus",
+        "url": "https://consensus.app/"
+      },
+      {
+        "title": "Elicit",
+        "url": "https://elicit.com/"
+      },
+      {
+        "title": "Illuminate (Google)",
+        "url": "https://illuminate.google.com/"
+      },
+      {
+        "title": "Undermind Research",
+        "url": "https://un.ms/research"
+      },
+      {
+        "title": "STORM (Stanford)",
+        "url": "https://storm.genie.stanford.edu/"
+      },
+      {
+        "title": "AI Paper Critique",
+        "url": "https://cspaper.org/"
+      }
+    ]
+  },
+  {
+    "category": "Videos",
+    "size": "large",
+    "items": [
+      {
+        "title": "Knowledge Distillation",
+        "url": "https://www.youtube.com/watch?v=jrJKRYAdh7I"
+      },
+      {
+        "title": "Explaining Attention",
+        "url": "https://www.youtube.com/watch?v=bCz4OMemCcA"
+      },
+      {
+        "title": "What happens to your brain when you fall in love?",
+        "url": "https://www.youtube.com/watch?v=rjC045PJTQs"
+      },
+      {
+        "title": "Why next gen chips separate Data and power?",
+        "url": "https://www.youtube.com/watch?v=hyZlQY2xmWQ"
+      },
+      {
+        "title": "Apple M-series Chip Architecture",
+        "url": "https://www.youtube.com/watch?v=8bf3ORrE5hQ"
+      },
+      {
+        "title": "Why Do movies feel different now?",
+        "url": "https://www.youtube.com/watch?v=5xEi8qg266g"
+      },
+      {
+        "title": "Machine Learning on pen and paper",
+        "url": "https://www.youtube.com/watch?v=f8NkChOg2oY"
+      },
+      {
+        "title": "How an F1 car works",
+        "url": "https://www.youtube.com/watch?v=V7707zEX9X4"
+      },
+      {
+        "title": "How genes affect your education",
+        "url": "https://www.youtube.com/watch?v=6Y-PeuGFaHc"
+      },
+      {
+        "title": "100+ computer science concepts explained under 15 mins",
+        "url": "https://www.youtube.com/watch?v=-uleG_Vecis"
+      },
+      {
+        "title": "What smoking does to your lungs",
+        "url": "https://www.youtube.com/watch?v=HD__r66sFjk"
+      },
+      {
+        "title": "VS code Tips and tricks",
+        "url": "https://www.youtube.com/watch?v=nmU9PAinP14"
+      },
+      {
+        "title": "Richard Dawkins Teaches evolution to religious students",
+        "url": "https://www.youtube.com/watch?v=jNhtbmXzIaM"
+      },
+      {
+        "title": "Quantum Computing Expert explains one concept at 5 different levels",
+        "url": "https://www.youtube.com/watch?v=OWJCfOvochA"
+      },
+      {
+        "title": "Behind google search",
+        "url": "https://www.youtube.com/watch?v=tFq6Q_muwG0"
+      }
+    ]
+  }
 ]
