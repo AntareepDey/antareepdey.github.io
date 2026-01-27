@@ -12,6 +12,11 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+import "@fontsource-variable/newsreader";
+import "@fontsource/dm-mono/300.css";
+import "@fontsource/dm-mono/400.css";
+import "@fontsource/dm-mono/500.css";
 ---
 
 <!doctype html>
@@ -40,34 +45,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, Astro.site)} />
 
-    <!-- Fonts - Optimized loading to prevent FOUT/FOIT -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Optimized Font Loading -->
+    <!-- Fonts are imported directly in the Astro frontmatter for self-hosting -->
 
-    <!-- Preload critical font (Newsreader) for immediate availability -->
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=optional"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-      crossorigin
-    />
-
-    <!-- Load DM Mono with optional display -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=optional"
-      rel="stylesheet"
-      crossorigin
-    />
-
-    <!-- Fallback for browsers without JS -->
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap"
-        rel="stylesheet"
-        crossorigin
-      />
-    </noscript>
+    <!-- KaTeX CSS for math rendering is now deferred to the end of body for better performance -->
 
     <!-- Prevent FOUC (Flash of Unstyled Content) for theme -->
     <script is:inline>
@@ -130,6 +111,29 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           });
         }
       });
+    </script>
+    <!-- Deferred KaTeX Loading - Only loads if math elements are present -->
+    <script is:inline>
+      const loadKatex = () => {
+        if (
+          (document.querySelector(".katex") ||
+            document.querySelector(".math")) &&
+          !document.getElementById("katex-css")
+        ) {
+          const link = document.createElement("link");
+          link.id = "katex-css";
+          link.rel = "stylesheet";
+          link.href =
+            "https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css";
+          link.integrity =
+            "sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV";
+          link.crossOrigin = "anonymous";
+          document.head.appendChild(link);
+        }
+      };
+      // Run on initial load and potentially subsequent navigations
+      window.addEventListener("load", loadKatex);
+      document.addEventListener("astro:page-load", loadKatex);
     </script>
   </body>
 </html>

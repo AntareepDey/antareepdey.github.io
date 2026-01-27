@@ -1,0 +1,89 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import BlogPostCard from "../../components/BlogPostCard.astro";
+import "../../styles/global.css";
+import "../../styles/blog.css";
+import { getCollection } from "astro:content";
+
+// Get all blog posts and sort by date
+const allPosts = await getCollection("blog", ({ data }) => {
+  return !data.draft;
+});
+
+const sortedPosts = allPosts.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+);
+
+// Group posts by year
+const postsByYear = sortedPosts.reduce(
+  (acc, post) => {
+    const year = new Date(post.data.date).getFullYear();
+    if (!acc[year]) {
+      acc[year] = [];
+    }
+    acc[year].push(post);
+    return acc;
+  },
+  {} as Record<number, typeof sortedPosts>,
+);
+
+const years = Object.keys(postsByYear)
+  .map(Number)
+  .sort((a, b) => b - a);
+---
+
+<BaseLayout title="Antareep's Blog">
+  <Navbar currentPath="/blog" />
+
+  <main class="container blog-list-container">
+    {
+      years.map((year) => (
+        <section class="blog-year-section">
+          <h2 class="blog-year-heading">{year}</h2>
+          <div class="blog-posts-list">
+            {postsByYear[year].map((post) => (
+              <BlogPostCard
+                title={post.data.title}
+                slug={post.slug}
+                date={post.data.date}
+                category={post.data.category}
+                excerpt={post.data.excerpt}
+                content={post.body}
+              />
+            ))}
+          </div>
+        </section>
+      ))
+    }
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .blog-list-container {
+    margin-top: 110px;
+  }
+
+  .blog-year-section {
+    margin-bottom: 48px;
+  }
+
+  .blog-year-heading {
+    font-family: "Newsreader Variable", serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .blog-posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+</style>

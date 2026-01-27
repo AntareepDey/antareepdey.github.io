@@ -1,0 +1,172 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import BackButton from "../components/BackButton.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import "../styles/blog.css";
+import { calculateReadingTime } from "../utils/readingTime";
+
+export interface Props {
+  title: string;
+  date: string;
+  description?: string;
+  image?: string;
+  content: string;
+  headings: Array<{ depth: number; slug: string; text: string }>;
+}
+
+const { title, date, description, image, content } = Astro.props;
+const readingTime = calculateReadingTime(content);
+const formattedDate = new Date(date).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<BaseLayout title={title} description={description} image={image}>
+  <Navbar currentPath="/blog" />
+
+  <main class="container blog-container">
+    <div class="back-button-wrapper">
+      <BackButton />
+    </div>
+
+    <article>
+      <header class="blog-header">
+        <h1 class="blog-title">{title}</h1>
+        <div class="blog-meta">
+          <time datetime={date}>{formattedDate}</time>
+          <span>•</span>
+          <span>{readingTime} min read</span>
+        </div>
+      </header>
+
+      <div class="prose markdown-content">
+        <slot />
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  function initCodeBlocks() {
+    const codeBlocks = document.querySelectorAll("pre");
+
+    codeBlocks.forEach((block) => {
+      if (block.querySelector(".copy-button")) return;
+
+      const button = document.createElement("button");
+      button.className = "copy-button";
+      button.setAttribute("aria-label", "Copy code to clipboard");
+      button.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
+
+      button.addEventListener("click", async () => {
+        const code = block.querySelector("code");
+        if (code) {
+          try {
+            await navigator.clipboard.writeText(code.textContent || "");
+            button.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"></polyline></svg>`;
+            button.classList.add("copied");
+            setTimeout(() => {
+              button.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
+              button.classList.remove("copied");
+            }, 2000);
+          } catch (err) {
+            console.error("Failed to copy code:", err);
+          }
+        }
+      });
+
+      block.style.position = "relative";
+      block.appendChild(button);
+    });
+  }
+
+  function initImageCaptions() {
+    const images = document.querySelectorAll(".markdown-content img");
+
+    images.forEach((img) => {
+      const alt = img.getAttribute("alt");
+      if (alt && alt.trim() && !img.closest("figure")) {
+        const figure = document.createElement("figure");
+
+        const caption = document.createElement("figcaption");
+        caption.textContent = alt;
+
+        img.parentNode?.insertBefore(figure, img);
+        figure.appendChild(img);
+        figure.appendChild(caption);
+
+        img.removeAttribute("alt");
+        img.setAttribute("alt", "");
+      }
+    });
+  }
+
+  document.addEventListener("astro:page-load", () => {
+    initCodeBlocks();
+    initImageCaptions();
+  });
+
+  document.addEventListener("astro:after-swap", () => {
+    initCodeBlocks();
+    initImageCaptions();
+  });
+
+  // Fallback for non-View Transitions navigation
+  document.addEventListener("DOMContentLoaded", () => {
+    initCodeBlocks();
+    initImageCaptions();
+  });
+
+  // Also run immediately if DOM is already loaded
+  if (
+    document.readyState === "complete" ||
+    document.readyState === "interactive"
+  ) {
+    initCodeBlocks();
+    initImageCaptions();
+  }
+</script>
+
+<style>
+  .blog-container {
+    margin-top: 110px;
+  }
+
+  .back-button-wrapper {
+    margin-bottom: 2rem;
+  }
+
+  .blog-header {
+    margin-bottom: 2rem;
+  }
+
+  .blog-title {
+    font-family: "Newsreader Variable", serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.75rem;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+  }
+
+  @media (min-width: 768px) {
+    .blog-title {
+      font-size: 2rem;
+    }
+  }
+
+  .blog-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+</style>

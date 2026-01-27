@@ -1,0 +1,277 @@
+/* Blog-specific styles - adapted from original Blog repo */
+/* Uses portfolio's CSS variables where possible */
+
+/* Typography (prose) - matches original Blog design */
+.prose {
+  max-width: none;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+.prose p,
+.prose strong,
+.prose em,
+.prose ul li,
+.prose ol li,
+.prose a {
+  color: var(--text-secondary);
+}
+
+.prose a {
+  text-decoration: underline;
+}
+
+.prose a:hover {
+  opacity: 0.8;
+}
+
+/* Headings */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  font-family: 'Newsreader Variable', serif;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.prose h1 {
+  font-size: 1.875rem;
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+}
+
+.prose strong {
+  font-weight: 600;
+}
+
+/* Paragraphs spacing */
+.prose p {
+  margin-bottom: 1.25rem;
+}
+
+/* Lists - ensure bullet points are visible */
+.prose ul {
+  list-style-type: disc;
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.prose ol {
+  list-style-type: decimal;
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose li::marker {
+  color: var(--text-secondary);
+}
+
+/* Nested lists */
+.prose ul ul {
+  list-style-type: circle;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose ul ul ul {
+  list-style-type: square;
+}
+
+/* Blockquotes - centered, no border */
+.prose blockquote {
+  margin: 2rem auto;
+  text-align: center;
+  border-left: none;
+  padding-left: 0;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+/* Inline code */
+.prose :not(pre)>code {
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .prose :not(pre)>code {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Code blocks - using Shiki dual theme */
+.prose pre {
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.5rem;
+  overflow: visible;
+  position: relative;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: var(--shiki-light-bg, #fafafa) !important;
+  color: var(--shiki-light, #24292e) !important;
+}
+
+[data-theme="dark"] .prose pre {
+  background-color: var(--shiki-dark-bg, #22272e) !important;
+  color: var(--shiki-dark, #adbac7) !important;
+}
+
+.prose pre code {
+  font-size: 0.875rem;
+  font-family: 'DM Mono', monospace;
+  background-color: transparent !important;
+  padding: 0;
+  display: block;
+  overflow-x: auto;
+  line-height: 1.6;
+  color: inherit !important;
+}
+
+/* Shiki theme switching - the code spans get their colors from CSS variables */
+.prose pre code span {
+  color: var(--shiki-light) !important;
+}
+
+[data-theme="dark"] .prose pre code span {
+  color: var(--shiki-dark) !important;
+}
+
+/* Shiki background transparent */
+.shiki,
+.shiki span {
+  color: var(--shiki-light) !important;
+  background-color: transparent !important;
+}
+
+[data-theme="dark"] .shiki,
+[data-theme="dark"] .shiki span {
+  color: var(--shiki-dark) !important;
+}
+
+/* Images and figures */
+.prose img {
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto 0.5rem auto;
+  width: 90%;
+  height: auto;
+  display: block;
+}
+
+.prose figure {
+  margin: 2rem 0;
+}
+
+.prose figcaption {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-family: 'Newsreader Variable', serif;
+  font-style: italic;
+}
+
+/* Copy button styles */
+.copy-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-family: system-ui, -apple-system, sans-serif;
+  cursor: pointer;
+  user-select: none;
+  border: none;
+  background-color: var(--border-subtle);
+  color: var(--text-secondary);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.copy-button:hover {
+  background-color: var(--text-secondary);
+  color: var(--bg-color);
+}
+
+.copy-button:active {
+  transform: scale(0.95);
+}
+
+/* KaTeX / Math equations */
+.katex-display {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.katex {
+  font-size: 1.1em;
+}
+
+/* Footnotes styling */
+.prose .footnotes ol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.prose .footnotes li {
+  line-height: 1.4;
+}
+
+.prose .footnotes li p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.prose .footnotes a {
+  word-break: break-all;
+}
+
+/* Horizontal rules */
+.prose hr {
+  margin: 2rem 0;
+  border: none;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* Tables */
+.prose table {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+}
+
+.prose th,
+.prose td {
+  padding: 0.5rem;
+  border: 1px solid var(--border-subtle);
+  text-align: left;
+}
+
+.prose th {
+  background-color: rgba(0, 0, 0, 0.02);
+  font-weight: 600;
+}
+
+[data-theme="dark"] .prose th {
+  background-color: rgba(255, 255, 255, 0.05);
+}

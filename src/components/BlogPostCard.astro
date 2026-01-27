@@ -1,0 +1,90 @@
+---
+import { calculateReadingTime } from "../utils/readingTime";
+
+export interface Props {
+  title: string;
+  slug: string;
+  date: string;
+  category: string;
+  excerpt?: string;
+  content?: string;
+}
+
+const { title, slug, date, category, excerpt, content = "" } = Astro.props;
+const readingTime = calculateReadingTime(content);
+---
+
+<article class="blog-post-card">
+  <a
+    href={`/blog/${slug}`}
+    class="block transition-opacity hover:opacity-70"
+    transition:name={`post-${slug}`}
+  >
+    <div class="flex justify-between items-start">
+      <div class="flex-1 mr-8">
+        <h3 class="post-title">
+          {title}
+        </h3>
+        {excerpt && <p class="post-excerpt">{excerpt}</p>}
+        <div class="post-meta">
+          <time datetime={date}>
+            {
+              new Date(date).toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              })
+            }
+          </time>
+          {
+            readingTime > 0 && (
+              <>
+                <span>•</span>
+                <span>{readingTime} min read</span>
+              </>
+            )
+          }
+        </div>
+      </div>
+
+      <div class="flex-shrink-0">
+        <span class="post-category">
+          {category}
+        </span>
+      </div>
+    </div>
+  </a>
+</article>
+
+<style>
+  .blog-post-card {
+    margin-bottom: 2rem;
+  }
+  .post-title {
+    font-family: "Newsreader Variable", serif;
+    font-size: 1.125rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.625;
+  }
+  .post-excerpt {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.625;
+    margin-bottom: 0.5rem;
+  }
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+  }
+  .post-category {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

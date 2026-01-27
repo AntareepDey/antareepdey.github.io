@@ -14,10 +14,15 @@ export default {
                 'toggle-bg': 'var(--toggle-bg)',
                 'toggle-circle': 'var(--toggle-circle)',
                 'border-subtle': 'var(--border-subtle)',
+                // Blog-specific colors
+                'light-text': '#7e7b74',
+                'light-bg': '#f0eee6',
+                'dark-text': '#f0eee6',
+                'dark-bg': '#1f1e1d',
             },
             fontFamily: {
-                newsreader: ['Newsreader', 'serif'],
-                mono: ['DM Mono', 'monospace'],
+                newsreader: ['Newsreader Variable', 'serif'],
+                mono: ["'DM Mono'", 'monospace'],
             },
             maxWidth: {
                 'content': '800px',

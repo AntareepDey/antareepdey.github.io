@@ -119,7 +119,7 @@ const styles = `
 }
 
 .bs-title {
-    font-family: 'Newsreader', serif;
+    font-family: 'Newsreader Variable', serif;
     font-size: 15px;
     font-weight: 600;
     line-height: 1.3;
@@ -133,7 +133,7 @@ const styles = `
 }
 
 .bs-author {
-    font-family: 'Newsreader', serif;
+    font-family: 'Newsreader Variable', serif;
     font-size: 13px;
     color: var(--text-primary);
     opacity: 0.7;
