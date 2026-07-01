@@ -61,5 +61,19 @@
         "description": "Give your Images a Old School Film Look using GAN's",
         "githubUrl": "https://github.com/AntareepDey/CineGAN",
         "date": "2024-06-18"
-    }
+    },
+    {
+        "id": 10,
+        "title": "BashNet",
+        "description": "A convolutional neural network written using Bash",
+        "githubUrl": "https://github.com/AntareepDey/BashNet",
+        "date": "2026-04-08"
+    },
+	{
+	    "id": 11,
+	    "title": "Notion Quotes Widget",
+	    "description": "Quotes widget for Notion that shows a unique quote everyday",
+	    "githubUrl": "https://github.com/AntareepDey/Quotes-widget",
+	    "date": "2026-03-21"
+	}
 ]

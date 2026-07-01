@@ -2,7 +2,7 @@
 title: "A thousand pictures I couldn't take"
 date: "2025-07-18"
 category: "Travel"
-excerpt: "Some trips begin with a checklist and a neatly packed suitcase. Mine began with a question mark."
+excerpt: "Some trips begin with a checklist and a neatly packed suitcase. Mine began with a question mark..."
 draft: False
 ---
 Some trips begin with a checklist and a neatly packed suitcase. Mine began with a question mark. This year during the summer break my family and I had decided on a Shimla-Manali Trip, but with the India-Pakistan conflict casting a long shadow, the week leading up to our departure was a tense dance of refreshing news pages and managing expectations. The very idea of a holiday felt fragile. But here's the thing about mountain adventures: they have a way of happening against all odds. The civilian airport at Chandigarh finally reopened on the 13th May. At 1:55 PM on the 18th, the plane lifted off from Kolkata's humid embrace, carrying us towards the north where the Himalayas stood waiting, utterly indifferent to human conflicts. As the flight descended into Chandigarh, the reality of the situation on the ground became starkly clear. From the terminal gates, the airfield looked less like a commercial hub and more like a strategic outpost. Countless C-17 Globemasters stood sentinel in the distance, a reminder that peace and paradise often share uncomfortably close quarters. We escaped into a waiting cab, speeding toward Kalka, where our first night's accommodation promised a buffer between the wartime reality and the mountain dreams I'd been nurturing.

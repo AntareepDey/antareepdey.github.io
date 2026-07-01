@@ -2,7 +2,7 @@
 title: "Hot Dog ? or Not a Hot Dog ?"
 date: "2023-09-10"
 category: "GUIDE"
-excerpt: "Remember that hilarious scene from *Silicon Valley* where Jian-Yang tried to pitch a Shazam for food app that could only identify hotdogs?"
+excerpt: "Remember that scene from *Silicon Valley* where Jian-Yang tried to pitch a Shazam for food?"
 draft: false
 ---
 

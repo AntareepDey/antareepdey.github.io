@@ -1,5 +1,5 @@
 ---
-title: "How to Train Your GAN "
+title: "How to Train Your GANs"
 date: "2024-06-18"
 category: "Guide"
 excerpt: "I've been trying to make my digital camera produce that gorgeous film look.."

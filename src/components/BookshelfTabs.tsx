@@ -49,7 +49,7 @@ const styles = `
 
 .bs-tab {
     font-family: 'DM Mono', monospace;
-    font-size: 12px;
+    font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     padding-bottom: 16px;
@@ -99,7 +99,7 @@ const styles = `
     position: relative;
     width: 100%;
     aspect-ratio: 2 / 3;
-    border-radius: 4px;
+    border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -120,7 +120,7 @@ const styles = `
 
 .bs-title {
     font-family: 'Newsreader Variable', serif;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
     line-height: 1.3;
     margin-bottom: 4px;
