@@ -17,6 +17,7 @@ import "@fontsource-variable/newsreader";
 import "@fontsource/dm-mono/300.css";
 import "@fontsource/dm-mono/400.css";
 import "@fontsource/dm-mono/500.css";
+import { ClientRouter } from "astro:transitions";
 ---
 
 <!doctype html>
@@ -30,6 +31,7 @@ import "@fontsource/dm-mono/500.css";
     <meta name="title" content={title} />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
+    <ClientRouter />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -52,12 +54,18 @@ import "@fontsource/dm-mono/500.css";
 
     <!-- Prevent FOUC (Flash of Unstyled Content) for theme -->
     <script is:inline>
-      const storedTheme = localStorage.getItem("theme");
-      const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)",
-      ).matches;
-      const theme = storedTheme || (prefersDark ? "dark" : "light");
-      document.documentElement.setAttribute("data-theme", theme);
+      const restoreTheme = () => {
+        const storedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        const theme = storedTheme || (prefersDark ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      };
+
+      restoreTheme();
+
+      document.addEventListener("astro:after-swap", restoreTheme);
     </script>
   </head>
   <body>
@@ -65,52 +73,72 @@ import "@fontsource/dm-mono/500.css";
 
     <!-- Theme & Navigation Scripts -->
     <script is:inline>
-      // Theme Toggle
-      document.addEventListener("DOMContentLoaded", () => {
-        const themeSwitch = document.getElementById("theme-switch");
+      // Hydrate state on page load/transition
+      const syncNavbarAndThemeState = () => {
         const html = document.documentElement;
-
+        const themeSwitch = document.getElementById("theme-switch");
         if (themeSwitch) {
-          // Set initial state
-          const currentTheme = html.getAttribute("data-theme");
-          themeSwitch.checked = currentTheme === "dark";
-
-          themeSwitch.addEventListener("change", (e) => {
-            const isDark = e.target.checked;
-            const newTheme = isDark ? "dark" : "light";
-            html.setAttribute("data-theme", newTheme);
-            localStorage.setItem("theme", newTheme);
-          });
+          themeSwitch.checked = html.getAttribute("data-theme") === "dark";
         }
-
-        // Navbar Scroll Effect
         const navbar = document.getElementById("navbar");
         if (navbar) {
-          window.addEventListener("scroll", () => {
-            navbar.classList.toggle("scrolled", window.scrollY > 10);
-          });
+          navbar.classList.toggle("scrolled", window.scrollY > 10);
         }
+      };
 
-        // Mobile Menu Logic
-        const hamburger = document.getElementById("hamburger-btn");
-        const mobileMenu = document.getElementById("mobile-menu");
+      // Attach event listeners exactly once globally using Event Delegation
+      if (!window.hasGlobalLayoutListeners) {
+        // Enable transitions on the theme switch container on first user interaction
+        const enableThemeSwitchTransition = (e) => {
+          const container = e.target.closest(".switch-container.no-transition");
+          if (container) {
+            container.classList.remove("no-transition");
+          }
+        };
+        document.addEventListener("pointerover", enableThemeSwitchTransition);
+        document.addEventListener("pointerdown", enableThemeSwitchTransition);
+        document.addEventListener("focusin", enableThemeSwitchTransition);
 
-        if (hamburger && mobileMenu) {
-          hamburger.addEventListener("click", (e) => {
+        // Theme Toggle Delegation
+        document.addEventListener("change", (e) => {
+          if (e.target && e.target.id === "theme-switch") {
+            const isDark = e.target.checked;
+            const newTheme = isDark ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", newTheme);
+            localStorage.setItem("theme", newTheme);
+          }
+        });
+
+        // Mobile Menu & Document Click Logic
+        document.addEventListener("click", (e) => {
+          const hamburger = document.getElementById("hamburger-btn");
+          const mobileMenu = document.getElementById("mobile-menu");
+          
+          if (hamburger && hamburger.contains(e.target)) {
             e.stopPropagation();
-            mobileMenu.classList.toggle("active");
-          });
+            mobileMenu?.classList.toggle("active");
+          } else if (
+            mobileMenu &&
+            mobileMenu.classList.contains("active") &&
+            !mobileMenu.contains(e.target)
+          ) {
+            mobileMenu.classList.remove("active");
+          }
+        });
 
-          document.addEventListener("click", (e) => {
-            if (
-              mobileMenu.classList.contains("active") &&
-              !mobileMenu.contains(e.target)
-            ) {
-              mobileMenu.classList.remove("active");
-            }
-          });
-        }
-      });
+        // Scroll Event delegation
+        window.addEventListener("scroll", () => {
+          const navbar = document.getElementById("navbar");
+          if (navbar) {
+            navbar.classList.toggle("scrolled", window.scrollY > 10);
+          }
+        });
+
+        window.hasGlobalLayoutListeners = true;
+      }
+
+      document.addEventListener("DOMContentLoaded", syncNavbarAndThemeState);
+      document.addEventListener("astro:page-load", syncNavbarAndThemeState);
     </script>
     <!-- Deferred KaTeX Loading - Only loads if math elements are present -->
     <script is:inline>

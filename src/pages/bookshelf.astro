@@ -23,7 +23,7 @@ import books from "../data/books.json";
         </section>
 
         <!-- Bookshelf Tabs (React Component) -->
-        <BookshelfTabs books={books} client:idle />
+        <BookshelfTabs books={books} client:load />
     </main>
 
     <Footer />
@@ -61,7 +61,7 @@ import books from "../data/books.json";
         }
 
         .bookshelf-intro h1 {
-            font-size: 28px;
+            font-size: 22px;
         }
     }
 </style>

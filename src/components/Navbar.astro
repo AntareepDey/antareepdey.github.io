@@ -60,7 +60,7 @@ const navLinks = [
         </div>
 
         <!-- Theme Toggle Switch -->
-        <div class="switch-container">
+        <div class="switch-container no-transition">
             <input
                 type="checkbox"
                 id="theme-switch"
@@ -68,6 +68,14 @@ const navLinks = [
                 aria-label="Toggle dark mode"
             />
             <label for="theme-switch" class="switch-label"></label>
+            <script is:inline>
+                (function() {
+                    const storedTheme = localStorage.getItem("theme");
+                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                    const theme = storedTheme || (prefersDark ? "dark" : "light");
+                    document.getElementById("theme-switch").checked = theme === "dark";
+                })();
+            </script>
         </div>
     </div>
 </nav>
