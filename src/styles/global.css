@@ -90,7 +90,7 @@ body {
 a {
   text-decoration: none;
   color: inherit;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.3s ease;
 }
 
 a:hover {
@@ -136,7 +136,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: box-shadow 0.3s ease;
+  transition:0.3s ease;
 }
 
 nav.scrolled {
